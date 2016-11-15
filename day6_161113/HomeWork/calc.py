@@ -9,8 +9,8 @@ a = re.search(r'\([^()]+\)', strip_space).group()  #找出最里层的括号
 no_kuohao = re.search(r'[^()]+', a).group()  #去掉括号
 # print(re.findall(r'[\+\*\/]',no_kuohao))
 
-li_a = re.sub(r'\/', ' ', no_kuohao).split(" ")  # 序列化
-result = -28  # 计算
+# li_a = re.sub(r'\/', ' ', no_kuohao).split(" ")  # 序列化
+# result = -28  # 计算
 
 
 # print(result)
@@ -21,13 +21,17 @@ def Operation(no_kuohao):
 
     li_a = re.sub(r'[\+\*\/]', ' ', no_kuohao).split(" ")
     if len(li_a) != 1:
+        # opt = li_a[1]
         # print(li_a)
         if len(opt) == 0:
             opt = '-'
         # print(opt)
+        print(opt)
         num_1 = li_a[0]
         num_2 = li_a[1]
+        print("%s%s%s" % (num_1, opt[0], num_2))
         result = eval("%s%s%s" % (num_1, opt[0], num_2))
+
         return str(result)
     else:
         result = eval(li_a[0])
@@ -36,22 +40,27 @@ def Operation(no_kuohao):
 
 strip_space = strip_space.replace(a, Operation(no_kuohao))
 print(strip_space)
-print(re.search(r'\([^()]+\)', strip_space).group())
+# print(re.search(r'\([^()]+\)', strip_space).group())
 b = re.search(r'\([^()]+\)', strip_space).group()
-print(re.search(r'-?\d[\*\/]-?\d', b).group())
 
 
-def chengchu(no_kuohao):
+# print(re.search(r'-?\d[\*\/]-?\d', b).group())
+
+
+def chengchu(cheng_chu):
     while True:
-        small_expression = re.search(r'-?\d[\*\/]-?\d', no_kuohao).group()
+        small_expression = re.search(r'(-?\d+\.?\d+)[\*\/](-?\d+\.?\d+)', cheng_chu).group()
+        print(small_expression)
         result = Operation(small_expression)
-        no_kuohao = no_kuohao.replace(small_expression, result)
+        print(result)
+        cheng_chu = cheng_chu.replace(small_expression, result)
+        print(cheng_chu)
         if len(re.sub(r'[\*\/]', ' ', no_kuohao).split(' ')) == 1:
             break
     return no_kuohao
 
 
-print(chengchu(strip_space))
+print(chengchu(b))
 
 
 
