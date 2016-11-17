@@ -51,19 +51,24 @@ def Operation(no_kuohao):
     print("opt", opt)
     li_num = re.sub(r'[\+\*\/]', ' ', no_kuohao).split(" ")  # 替换掉运算符,把数字存进列表
     print("li_num", li_num)
-    if len(li_num) == 1:
-        if len(opt) == 0:  # 此处判断减负数
+    if len(li_num) == 1: # 此处判断减负数
+        if re.search(r'--',no_kuohao):
             opt = ['+']  # 减负数实际上就是做加法
             li_num = li_num[0].replace('--', ' ').split(" ")  # 把后面的负数替换成正数
             # print(li_num[0].replace('--',' ').split(" "))
             # print(li_num)
+        elif re.match(r'\d',no_kuohao):
+            opt = ['-']
+            li_num = li_num[0].split('-')
+        # elif re.match(r'-',no_kuohao)
+
 
     print(opt_dic[opt[0]](li_num))
     # result = eval(li_a[0])
     # return str(result)
 
 
-Operation('-1-2')
+Operation('1.2-2.1')
 
 strip_space = strip_space.replace(a, Operation(no_kuohao))
 print(strip_space)
