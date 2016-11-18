@@ -104,7 +104,7 @@ cal = "1 - 2 * ( (6-3 +(-40/5) * (9-2*15/3 + 9 /3*9/9*2 +10 * 8/4 )) - (-4*3)/ (
 
 
 while True:
-    cal = input(">>: ").strip()
+    cal = input(">>(quit): ").strip()
     # cal_add_parentheses = "(%s)"% cal
     cut_space = re.sub(r' +', '', cal)  # 去掉无用的空格
     if len(re.findall(r'[\+\-\*\/]', cal.lstrip('-'))) == 0:
@@ -127,17 +127,8 @@ while True:
                 print("----------->", find_deep_parentheses, reslut)
                 print('rrrrrrr',cut_space)
             else:
-                # print("laozheli")
-                # print(cut_space)
-                # print(jiajian(chengchu(cut_space)))
+                print(jiajian(chengchu(cut_parentheses)))
                 break
 
     else:
         print(jiajian(chengchu(cut_space)))
-# 4*(9-4)
-# c = chengchu(b)
-# print(c)
-# print(jiajian(c))
-# 匹配减号 -?\d-{1,2}\d
-# 匹配乘除 -?\d[\*\/]-?\d
-# 9-2*50/5 9-20 -11
