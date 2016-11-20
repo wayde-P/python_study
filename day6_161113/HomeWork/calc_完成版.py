@@ -69,10 +69,10 @@ def chengchu(cheng_chu):
         while True:
             # small_expression = re.search(r'(\d+(\.\d+)?)[\*\/](-?\d+(\.?\d+)?)', cheng_chu).group() #找到一个乘法或除法的式子
             small_expression = re.search(r'(-?\d+(\.\d+)?)[\*\/](-?\d+(\.?\d+)?)', cheng_chu).group()  # 找到一个乘法或除法的式子
-            # print(small_expression)
             result = Operation(small_expression)  # 得出结果
-            # print(result)
             cheng_chu = cheng_chu.replace(small_expression, str(result))  # 替换回原来的式子
+            # print(small_expression)
+            # print(result)
             # print(cheng_chu)
             # print(re.sub(r'[\*\/]', ' ', cheng_chu).split(' '))
             if len(re.sub(r'[\*\/]', ' ', cheng_chu).split(' ')) == 1:
@@ -86,6 +86,9 @@ def jiajian(jia_jian):
         return jia_jian
     elif re.findall(r'[\+\-]', jia_jian):
         while True:
+            # if len(re.sub(r'[\+\-]', ' ', jia_jian.lstrip('-')).split(' ')) == 1:
+            if len(re.findall(r'(-?\d+(\.\d+)?)[\+\-](-?\d+(\.?\d+)?)', jia_jian)) == 0:
+                break
             # small_expression = re.search(r'(\d+(\.\d+)?)[\+\-](-?\d+(\.?\d+)?)', jia_jian).group()
             small_expression = re.search(r'(-?\d+(\.\d+)?)[\+\-](-?\d+(\.?\d+)?)', jia_jian).group()
             # print(small_expression)
@@ -94,16 +97,12 @@ def jiajian(jia_jian):
             jia_jian = jia_jian.replace(small_expression, str(result))
             # print(cheng_chu)
             # print(re.sub(r'[\*\/]', ' ', cheng_chu).split(' '))
-            if len(re.sub(r'[\+\-]', ' ', jia_jian.lstrip('-')).split(' ')) == 1:
-                break
     return jia_jian
-
-
-cal = "1 - 2 * ( (6-3 +(-40/5) * (9-2*15/3 + 9 /3*9/9*2 +10 * 8/4 )) - (-4*3)/ (16-3*2) )"
+cal = "1 - 2 * ( (60-30 +(-40/5) * (9-2*5/3 + 7 /3*99/4*2998 +10 * 568/14 )) - (-4*3)/ (16-3*2) )"
+#cal = "1-9-2*5/3 + 7 /3*99/4*2998 +10 * 568/14"
 print("请输入计算公式:如:", cal)
 while True:
     cal = input(">>(quit): ").strip()
-    # cal_add_parentheses = "(%s)"% cal
     cut_space = re.sub(r' +', '', cal)  # 去掉无用的空格
     if 'quit' == cal:
         exit("bye bye !")
@@ -120,13 +119,13 @@ while True:
             if re.findall(r'[()]', cut_space):
                 find_deep_parentheses = re.search(r'\([^()]+\)', cut_space).group()  # 找出最里层的括号
                 cut_parentheses = re.search(r'[^()]+', find_deep_parentheses).group()  # 去掉括号
-                result = jiajian(chengchu(cut_parentheses))
+                result = jiajian(chengchu(cut_parentheses))                     #调用函数计算结果
                 cut_space = cut_space.replace(find_deep_parentheses, result)  # 把计算结果替换到原算式
                 # print("===========>", cut_parentheses, result)
                 print("-->", find_deep_parentheses, result)
                 print('##>', cut_space)
             else:
-                print("结果:", jiajian(chengchu(cut_parentheses)))
+                print("结果:", jiajian(chengchu(cut_space)))
                 break
     else:
         print("结果:", jiajian(chengchu(cut_space)))

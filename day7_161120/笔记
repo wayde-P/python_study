@@ -1,0 +1,2 @@
+os.system 输出命令结果到屏幕
+os.popen("dir").read() #保存命令的执行输出
