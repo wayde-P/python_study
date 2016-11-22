@@ -15,29 +15,29 @@ class SchoolMember(object):
         SchoolMember.member += 1
 
     def tell(self):
-        for k,v in self.__dict__.items():
-            print(k,v)
+        for k, v in self.__dict__.items():
+            print(k, v)
 
     def __del__(self):
-        print("开除了",self.name)
+        print("开除了", self.name)
+
 
 class Teacher(SchoolMember):
-    def __init__(self,name,age,sex,course,salary):
-        SchoolMember.__init__(self,name,age,sex)
+    def __init__(self, name, age, sex, course, salary):
+        SchoolMember.__init__(self, name, age, sex)
         self.course = course
         self.salary = salary
         # SchoolMember.tell(self)
 
+
 class Student(SchoolMember):
-    def __init__(self,name,age,sex,tuition,course):
+    def __init__(self, name, age, sex, tuition, course):
         # SchoolMember.__init__(self,name,age,sex)
-        super(Student,self).__init__(self,name,age,sex)
+        super(Student, self).__init__(self, name, age, sex)
         self.course = course
         self.tuition = tuition
         self.amount = 0
 
-    def pay_tuition(self,amount):
-        print("ganggang 交了 ",self.tuition)
+    def pay_tuition(self, amount):
+        print("ganggang 交了 ", self.tuition)
         self.amount += amount
-
-
