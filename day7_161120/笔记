@@ -1,2 +1,29 @@
 os.system 输出命令结果到屏幕
 os.popen("dir").read() #保存命令的执行输出
+
+面向对象 object oriented progring
+ 类的特性
+ 一类数据的模板
+
+ 封装
+    防止数据被随意修改
+    使外部程序不需要关注对象内部的逻辑结构
+    需需要通过对象对外提供的接口进行访问即可
+ 继承
+    通过父类->子类的方式以最小代码量\
+    实现不同角色的共同点和不同点
+
+
+私有属性
+    __private_attr_name = value
+    对外部提供只读访问接口
+    def get_heart(self):
+        return self.__heart
+
+    强制访问私有属性
+        r1._Role__heart
+        r1实例名
+        Role类名前加_
+        heart私有属性定义的时候加__,使用的时候也加__
+公有属性
+    在类里直接定义的
