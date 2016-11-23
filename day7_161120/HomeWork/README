@@ -14,9 +14,9 @@
 7. 上面的操作产生的数据都通过pickle序列化保存到文件里
 
 //
-//school:[shanghai,beijing]
-//beijing_course:[python,linux]
-//shanghai_course:[go]
-//python_student:[stu1,stu2]
-//stu1:{fee:100,grade:98}
-//stu2:{fee:200,grade:98}
+//school=[shanghai,beijing]
+//beijing_course=[python,linux]
+//shanghai_course=[go]
+//python_student=[stu1,stu2]
+//stu1={fee:100,grade:98}
+//stu2={fee:200,grade:98}
