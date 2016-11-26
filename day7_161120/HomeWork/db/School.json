@@ -1,0 +1,10 @@
+{
+  "shanghai": {
+    "py_s15": "lidewei",
+    "mysql_s1": "liyang"
+  },
+  "beijing": {
+    "go_s1": "xiaoming",
+    "C_s1": "renyi"
+  }
+}

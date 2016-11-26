@@ -1,0 +1,18 @@
+{
+  "py_s15": {
+    "address": "shanghai",
+    "course": "python"
+  },
+  "go_s1": {
+    "address": "shanghai",
+    "course": "go"
+  },
+  "mysql_s1": {
+    "address": "shanghai",
+    "course": "mysql"
+  },
+  "C_s1": {
+    "address": "beijing",
+    "course": "C"
+  }
+}
