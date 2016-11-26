@@ -1,8 +1,7 @@
 {
-  "mysql": {
     "zewei": {
+      "class": "py_s15",
       "grade": 88,
       "fee": 33333
     }
-  }
 }
