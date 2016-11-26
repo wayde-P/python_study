@@ -2,7 +2,6 @@ import pymysql
 import os
 import subprocess
 
-
 from random import Random
 
 mysql_host = "192.168.0.34"
@@ -26,26 +25,27 @@ conn = pymysql.connect(host=mysql_host,
 def random_str(randomlength=8):
     str = ''
     chars = 'abcdefghijklmnopqrstuvwxyz0123456789'
-    #chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
+    # chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
     length = len(chars) - 1
     random = Random()
     for i in range(randomlength):
         str += chars[random.randint(0, length)]
     return str
 
+
 cur = conn.cursor()
-for i in range(1):
+for i in range(20000):
     user_name = random_str()
     domain_name = "ttxrw.com"
     mail_name = user_name + "@" + domain_name
     directory = domain_name + "/" + user_name + "/"
 
     sql1 = "insert into alias (address,domain,goto,created,modified,active) VALUES ('%s','%s','%s',now(),now(),'1');" % (
-    mail_name, domain_name, mail_name)
+        mail_name, domain_name, mail_name)
     sql2 = "INSERT INTO mailbox " \
            "(username,local_part,domain,maildir,password,name,quota,active,created,modified) " \
            "VALUES " \
-           "('%s','%s','%s','%s','{CRAM-MD5}ee1f78573314f6c9099cc18e184d75b9ea6e7e6f4ce7ebf5fc4d2d12a95c0cac','%s','0','1',now(),now());"\
+           "('%s','%s','%s','%s','{CRAM-MD5}ee1f78573314f6c9099cc18e184d75b9ea6e7e6f4ce7ebf5fc4d2d12a95c0cac','%s','0','1',now(),now());" \
            % (mail_name,
               user_name,
               domain_name,
@@ -55,6 +55,7 @@ for i in range(1):
     cur.execute(u"{0:s}".format(sql1))
     cur.execute("%s" % sql2)
     command = "rsync -av --exclude='*,S' --delete tom1/ %s/" % user_name
-    subprocess.Popen(command,shell=True,cwd=work_dir)
+    subprocess.Popen(command, shell=True, cwd=work_dir)
+    print(i)
 cur.close()
 conn.close()
