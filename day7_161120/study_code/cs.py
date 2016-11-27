@@ -29,4 +29,3 @@ print(r1.nationality,r2.nationality)
 print(r2)
 
 
-150 1106 2031
