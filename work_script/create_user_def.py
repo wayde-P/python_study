@@ -1,7 +1,7 @@
 import pymysql
 import os
 import subprocess
-
+import time
 from random import Random
 
 mysql_host = "192.168.0.34"
@@ -34,28 +34,26 @@ def random_str(randomlength=8):
 
 
 cur = conn.cursor()
-for i in range(20000):
-    user_name = random_str()
-    domain_name = "ttxrw.com"
-    mail_name = user_name + "@" + domain_name
-    directory = domain_name + "/" + user_name + "/"
+date = "ttxrw.%s" % time.strftime("%Y%m%d", time.localtime())
+num = int(input("input create mail number:").strip())
+with open(date, "w+") as name_list:
+    for i in range(num):
+        user_name = random_str()
+        domain_name = "ttxrw.com"
+        mail_name = user_name + "@" + domain_name
+        directory = domain_name + "/" + user_name + "/"
+        sql1 = "insert into alias (address,domain,goto,created,modified,active) VALUES ('%s','%s','%s',now(),now(),'1');" % \
+               (mail_name, domain_name, mail_name)
+        sql2 = "INSERT INTO mailbox " \
+               "(username,local_part,domain,maildir,password,name,quota,active,created,modified) " \
+               "VALUES " \
+               "('%s','%s','%s','%s','{CRAM-MD5}ee1f78573314f6c9099cc18e184d75b9ea6e7e6f4ce7ebf5fc4d2d12a95c0cac','%s','0','1',now(),now());" \
+               % (mail_name, user_name, domain_name, directory, user_name)
 
-    sql1 = "insert into alias (address,domain,goto,created,modified,active) VALUES ('%s','%s','%s',now(),now(),'1');" % (
-        mail_name, domain_name, mail_name)
-    sql2 = "INSERT INTO mailbox " \
-           "(username,local_part,domain,maildir,password,name,quota,active,created,modified) " \
-           "VALUES " \
-           "('%s','%s','%s','%s','{CRAM-MD5}ee1f78573314f6c9099cc18e184d75b9ea6e7e6f4ce7ebf5fc4d2d12a95c0cac','%s','0','1',now(),now());" \
-           % (mail_name,
-              user_name,
-              domain_name,
-              directory,
-              user_name)
-
-    cur.execute(u"{0:s}".format(sql1))
-    cur.execute("%s" % sql2)
-    command = "rsync -av --exclude='*,S' --delete tom1/ %s/" % user_name
-    subprocess.Popen(command, shell=True, cwd=work_dir)
-    print(i)
-cur.close()
-conn.close()
+        cur.execute(u"{0:s}".format(sql1))
+        cur.execute("%s" % sql2)
+        command = "rsync -av --exclude='*,S' --delete tom1/ %s/" % user_name
+        subprocess.Popen(command, shell=True, cwd=work_dir)
+        name_list.write(user_name+"\n")
+    cur.close()
+    conn.close()
