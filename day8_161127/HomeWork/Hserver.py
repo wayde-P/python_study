@@ -23,3 +23,5 @@ while True:
             conn.send(res)
         except ConnectionResetError as e:
             break
+
+server.close()

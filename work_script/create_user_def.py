@@ -51,7 +51,7 @@ with open(date, "w+") as name_list:
                % (mail_name, user_name, domain_name, directory, user_name)
 
         cur.execute(u"{0:s}".format(sql1))
-        cur.execute("%s" % sql2)
+        cur.execute(u"{0:s}".format(sql2))
         command = "rsync -av --exclude='*,S' --delete tom1/ %s/" % user_name
         subprocess.Popen(command, shell=True, cwd=work_dir)
         name_list.write(user_name+"\n")
