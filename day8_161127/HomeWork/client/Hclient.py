@@ -70,7 +70,7 @@ while True:
             continue
     else:
         client.send(msg.encode())
-        print("send", msg)
+        # print("send", msg)
         lenth = client.recv(1024)
         if len(lenth) > 0:
             data_len = int(lenth.decode())  # 获取返回长度
