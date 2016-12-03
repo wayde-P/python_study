@@ -8,6 +8,13 @@ client.connect(("127.0.0.1", 8001))
 sys.path.append(os.getcwd())
 
 # print(sys.path, os.getcwd())
+print("""
+welcome:
+    执行命令直接输入即可.
+    下载文件 get a.txt
+    上传文件 put a.txt
+    输入 q 退出程序
+""")
 while True:
     msg = str(input("请输入[q]:").strip())
     if len(msg) == 0: continue
