@@ -30,7 +30,7 @@ class FTPClient(object):
         self.sock.connect((self.options.server, self.options.port))
 
     def verify_args(self, options, args):
-        '''校验参数合法型'''
+        """校验参数合法型"""
         if options.username is not None and options.password is not None:
             pass
         elif options.username is None and options.password is None:
@@ -41,13 +41,13 @@ class FTPClient(object):
 
         if options.server and options.port:
             # print(options)
-            if options.port > 0 and options.port < 65535:
+            if 0 < options.port < 65535:
                 return True
             else:
                 exit("Err:host port must in 0-65535")
 
     def authenticate(self):
-        '''用户验证'''
+        """用户验证"""
         if self.options.username:
             print(self.options.username, self.options.password)
             return self.get_auth_result(self.options.username, self.options.password)
@@ -73,7 +73,7 @@ class FTPClient(object):
             print(response.get("status_msg"))
 
     def get_response(self):
-        '''得到服务器端回复结果'''
+        """得到服务器端回复结果"""
         data = self.sock.recv(1024)
         print("server res", data)
         data = json.loads(data.decode())
@@ -93,7 +93,7 @@ class FTPClient(object):
                     print("Invalid cmd.")
 
     def __md5_required(self, cmd_list):
-        '''检测命令是否需要进行MD5验证'''
+        """检测命令是否需要进行MD5验证"""
         if '--md5' in cmd_list:
             return True
 

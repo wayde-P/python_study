@@ -1,0 +1,165 @@
+
+
+抽象方法
+@staticmethod 不能访问类的任何属性
+@classmethod 类方法  只能访问公有属性
+@property 属性方法  ， 把一个方法变成一个静态属性
+def sayhi()
+    pass
+
+@sayhi.setter
+def sayhi(k):
+
+@sayhi.delter
+def sayhi():
+
+
+__call__()  : 实例 + ()会触发call method
+
+__dict__ 打印实例中所有属性
+
+__getitem__ 以字典的形式操作实例
+
+ __new__  先于 __init__执行， 可以在new中自定义类的实例化过程
+
+ __str__ 返回实例的字符串形式
+
+__metaclass__  元类，
+
+type() 可以动态创建一个类
+
+
+
+
+try ... except
+IOError
+ValueError
+IndexError
+IndentationError
+TypeError
+
+
+try
+
+except (IndexError,IndentationError) as e:
+     print(e)
+
+else:
+
+raise
+
+assert
+
+
+__import__('day9.testmod')
+
+hasattr
+getattr
+setattr
+delattr
+
+
+
+socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind(address)
+s.listen(5)
+conn,clientaddr = s.accept
+
+conn.send
+
+
+
+林达美国
+百年孤独
+追风筝的人
+三杯茶
+白鹿原
+平凡的世界
+三体
+浪潮之巅
+数学之美
+
+华尔街之狼
+上帝之城
+焦土之城
+绝美之城
+
+阿甘正传
+辛德勒的名单
+肖申克的救赎
+勇敢的心
+角斗士
+飘 乱世佳人 after all , tomorrow is another day
+血钻
+卢旺达饭店
+战争之王
+教父
+楚门的世界
+革命之路
+帝国的覆灭
+当幸福来敲门
+
+千与千寻
+哈尔的移动城堡
+龙猫
+
+百元之恋
+
+
+
+
+
+
+
+
+
+
+
+
+
+ftp server
+
+put
+get
+ls
+cd
+pwd
+mkdir
+mv
+rm
+copy src dest
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

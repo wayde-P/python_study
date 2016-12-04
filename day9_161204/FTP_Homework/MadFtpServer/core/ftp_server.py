@@ -3,6 +3,7 @@ import configparser
 from conf import settings
 import os
 import hashlib
+import json
 
 STATUS_CODE = {
     250: "Invalid cmd format, e.g: {'action':'get','filename':'test.py','size':344}",
@@ -15,8 +16,6 @@ STATUS_CODE = {
     257: "ready to send file",
     258: "md5 verification",
 }
-
-import json
 
 
 class FTPHandler(socketserver.BaseRequestHandler):
@@ -42,7 +41,7 @@ class FTPHandler(socketserver.BaseRequestHandler):
                 self.send_response(250)
 
     def send_response(self, status_code, data=None):
-        '''向客户端返回数据'''
+        """向客户端返回数据"""
         response = {'status_code': status_code, 'status_msg': STATUS_CODE[status_code]}
         if data:
             response.update(data)
@@ -62,7 +61,7 @@ class FTPHandler(socketserver.BaseRequestHandler):
             self.send_response(254)
 
     def authenticate(self, username, password):
-        '''验证用户合法性，合法就返回用户数据'''
+        """验证用户合法性，合法就返回用户数据"""
 
         config = configparser.ConfigParser()
         config.read(settings.ACCOUNT_FILE)
