@@ -1,9 +1,9 @@
 import socketserver
 import configparser
-from conf import settings
 import os
 import hashlib
 import json
+from conf import settings
 
 STATUS_CODE = {
     250: "Invalid cmd format, e.g: {'action':'get','filename':'test.py','size':344}",
@@ -73,11 +73,16 @@ class FTPHandler(socketserver.BaseRequestHandler):
                 return config[username]
 
     def _put(self, *args, **kwargs):
-        "client send file to server"
+        """client send file to server"""
+        data = args[0]  # put file_name
+        if data.get('filename') is None:  # 判断文件名是否存在
+            self.send_response(255)
+        self.user_home_dir = "%s/%s" % (settings.USER_HOME, self.user["Username"])
+
         pass
 
     def _get(self, *args, **kwargs):
-        data = args[0]
+        data = args[0]  # get file_name
         if data.get('filename') is None:
             self.send_response(255)
         user_home_dir = "%s/%s" % (settings.USER_HOME, self.user["Username"])
@@ -110,10 +115,23 @@ class FTPHandler(socketserver.BaseRequestHandler):
             self.send_response(256)
 
     def _ls(self, *args, **kwargs):
+        data = args[0]
+
+
         pass
 
     def _cd(self, *args, **kwargs):
-        pass
+        data = args[0]
+        if self.current_dir is None:
+            old_current_dir = self.user_home_dir
+        else:
+            old_current_dir = self.current_dir
+        if data.get('dir') is None:
+            self.current_dir = self.user_home_dir
+        elif data.get('dir') == '-':
+            self.current_dir = old_current_dir
+        else:
+            self.current_dir = "%s/%s" % (self.current_dir, data.get('dir'))
 
 
 if __name__ == "__main__":

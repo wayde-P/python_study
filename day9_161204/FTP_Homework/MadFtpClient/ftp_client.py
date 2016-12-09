@@ -81,7 +81,7 @@ class FTPClient(object):
 
     def interactive(self):
         if self.authenticate():
-            print("---start interactive iwth u...")
+            print("---start interactive with u...")
             while True:
                 choice = input("[%s]:" % self.user).strip()
                 if len(choice) == 0: continue
@@ -131,7 +131,7 @@ class FTPClient(object):
                 md5_obj = hashlib.md5()
                 progress = self.show_progress(response['file_size'])  # generator
                 progress.__next__()
-                while received_size < response['file_size']:
+                while received_size < response['file_size']:  # 开始接收文件
                     data = self.sock.recv(4096)
                     received_size += len(data)
                     try:
@@ -166,6 +166,10 @@ class FTPClient(object):
                 else:
                     print("----->file rece done----")
                     file_obj.close()
+
+    def _put(self, cmd_list):
+        pass
+
 
 
 if __name__ == "__main__":
