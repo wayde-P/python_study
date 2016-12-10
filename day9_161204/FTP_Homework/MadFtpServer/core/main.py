@@ -1,6 +1,11 @@
 import optparse
-from core.ftp_server import FTPHandler
+import os, sys
 import socketserver
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
+
+from core.ftp_server import FTPHandler
 from conf import settings
 
 

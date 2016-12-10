@@ -9,7 +9,7 @@ from core import operate_DB
 
 class Teacher(object):
     def __init__(self, name, address, course):
-        self.operate_DB = operate_DB.Operate("%s/db/Teacher.json" % basedir)
+        self.operate_DB = operate_DB.Operate()
         self.address = address
         self.course = course
         self.name = name

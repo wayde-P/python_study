@@ -17,5 +17,3 @@ class Student(object):
 
     def create_student(self):
         data = self.OPerate_DB.load_data()
-
-        pass

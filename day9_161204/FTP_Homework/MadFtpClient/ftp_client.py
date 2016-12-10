@@ -27,6 +27,7 @@ class FTPClient(object):
 
     def make_connection(self):
         self.sock = socket.socket()
+        print(self.options.server, self.options.port)
         self.sock.connect((self.options.server, self.options.port))
 
     def verify_args(self, options, args):
@@ -169,6 +170,36 @@ class FTPClient(object):
 
     def _put(self, cmd_list):
         pass
+
+    # 已经完成,待优化
+    def _cd(self, cmd_list):
+        print("cd--", cmd_list)
+        if len(cmd_list) == 1:
+            print("no dirname follows...")
+            return
+        data_header = {
+            'action': 'cd',
+            'dir': cmd_list[1]
+        }
+        self.sock.send(json.dumps(data_header).encode())
+        response = self.get_response()
+
+        if response.get("dir"):
+            print(response["dir"])
+        else:
+            print(response)
+
+    def _ls(self, cmd_list):
+        print("ls--", cmd_list)
+        if len(cmd_list) == 1:
+            print("no dirname follows...")
+            return
+        data_header = {
+            'action': 'ls',
+            'dir': cmd_list[1]
+        }
+        self.sock.send(json.dumps(data_header).encode())
+        response = self.get_response()
 
 
 

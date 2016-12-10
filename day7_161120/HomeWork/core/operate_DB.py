@@ -9,15 +9,17 @@ sys.path.append(basedir)
 # print(sys.path)
 
 class Operate(object):
-    def __init__(self, file_name):
-        self.Filename = file_name
+    Filename = "%s/db/DB.json" % basedir
+
+    # def __init__(self):
+    #     self.Filename = "%s/db/DB.json" % basedir
 
     def load_data(self):
-        with open(self.Filename) as DB:
+        with open(Filename) as DB:
             data = json.load(DB)
         return data
 
     def dump_data(self, data):
-        with open(self.Filename, "w+") as DB:
+        with open(Filename, "w+") as DB:
             DB.write(json.dumps(data, DB))
         return "ok"
