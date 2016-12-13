@@ -6,7 +6,7 @@ import hashlib
 import sys
 
 STATUS_CODE = {
-    250: "Invalid cmd format, e.g: {'action':'get','filename':'test.py','size':344}",
+    250: "Invalid cmd format, e.g: {'action':'get','filename':'lock_test.py','size':344}",
     251: "Invalid cmd ",
     252: "Invalid auth data",
     253: "Wrong username or password",
