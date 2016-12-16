@@ -13,18 +13,18 @@ from conf import settings
 
 def main():
     paser = optparse.OptionParser()
-    paser.add_option("-s", "--host", dest="host", help="server ipv4 address")
-    paser.add_option("-g", "--group", dest="group", help="server groups")
-    paser.add_option("-c", "--command", dest="command", help="command")
+    paser.add_option("-s", "--host", dest="host", help="server ipv4 address like : 192.168.1.1")
+    paser.add_option("-g", "--group", dest="group", help="server groups like : webserver ")
+    paser.add_option("-c", "--command", dest="command", help="to server exec command")
     options, args = paser.parse_args()
     # print(options)
     if (options.host is not None or options.group is not None) and options.command is None:
-        exit("请带上 -c \"你的命令\"")
+        exit("请添加选项 -c \"你的命令\"")
     elif options.host is None and options.group is None:
-        exit("请输入 -h 或 -g ")
+        exit("请添加选项 -h 或 -g ")
     else:
         server_list = fetch_server_list(options.host, options.group)
-        print(server_list)
+    run(server_list, options.command)
 
 
 def launch(host, port, user, password, command):
@@ -33,14 +33,21 @@ def launch(host, port, user, password, command):
     ssh.connect(hostname=host, port=port, username=user, password=password)
     stdin, stdout, stderr = ssh.exec_command(command)
     result = stdout.read()
+    print("host: %s , command: %s,".center(40, "=") % (host, command))
     print(result.decode())
+    print(str("end").center(40, "="))
+    print("\n")
     ssh.close()
 
 
-def run(server):
+def run(server, command):
     p_list = []
-    for i in server.keys():
-        process = MP.Process(target=launch, args=())
+    for host in server.keys():
+        port = server[host]["port"]
+        user = server[host]["user"]
+        password = server[host]["password"]
+        exec_command = command
+        process = MP.Process(target=launch, args=(host, port, user, password, exec_command))
         process.start()
         p_list.append(process)
 
@@ -63,7 +70,7 @@ def fetch_server_list(hosts, groups):
                 server_list[host] = {}  # host加入列表里
                 server_list[host]["user"] = config[host]["user"]
                 server_list[host]["password"] = config[host]["password"]
-                server_list[host]["port"] = config[host]["port"]
+                server_list[host]["port"] = int(config[host]["port"])
             else:
                 print(host, "is not in host configure ")
     if groups is not None:
@@ -72,10 +79,10 @@ def fetch_server_list(hosts, groups):
             if group in all_server:
                 for host in config[group]["ip"].split(","):
                     if host in all_server:  # host存在配置文件里
-                        server_list[host] = {}  # host加入列表里
+                        server_list[host] = {}  # host加入字典里
                         server_list[host]["user"] = config[host]["user"]
                         server_list[host]["password"] = config[host]["password"]
-                        server_list[host]["port"] = config[host]["port"]
+                        server_list[host]["port"] = int(config[host]["port"])
                     else:
                         print(host, "is not in host configure ")
                         # server_list.append(host)

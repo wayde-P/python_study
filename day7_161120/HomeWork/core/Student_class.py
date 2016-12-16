@@ -4,7 +4,7 @@ import os
 basedir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(basedir)
 
-# from core import School_class
+# from bin import School_class
 from core import operate_DB
 
 
