@@ -1,0 +1,11 @@
+
+1.主机分组,分组文件为conf下的group文件
+2.主机信息配置文件用configparser解析,配置文件为conf下的hosts文件
+3.可批量执行命令、发送文件，结果实时返回，执行格式如下
+    batch_run  -s h1,h2,h3   -g web_clusters,db_servers    -c  "df -h"　
+4.主机用户名密码、端口可以不同
+5.执行远程命令使用paramiko模块
+6.批量命令需使用multiprocessing并发
+
+
+程序已经实现全部实现.

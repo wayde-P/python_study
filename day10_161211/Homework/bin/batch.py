@@ -28,6 +28,7 @@ def main():
 
 
 def launch(host, port, user, password, command):
+    """ssh 远程执行命令函数"""
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     ssh.connect(hostname=host, port=port, username=user, password=password)
@@ -41,6 +42,7 @@ def launch(host, port, user, password, command):
 
 
 def run(server, command):
+    """多进程并发模块"""
     p_list = []
     for host in server.keys():
         port = server[host]["port"]
@@ -56,18 +58,18 @@ def run(server, command):
 
 
 def fetch_server_list(hosts, groups):
+    """解析ip模块,对输入的ip和组进行组合,并去重.返回的是ip为key的字典"""
     config = configparser.ConfigParser()
     config.read(settings.host_file)  # 读取host配置文件
     config.read(settings.group_file)  # 读取group配置文件
     all_server = config.sections()
     # print(all_server)
     server_list = {}  # 用来存储服务器列表
-
     if hosts is not None:  # 传入的host不为空
         host_list = hosts.split(",")  # 切割传入的host
         for host in host_list:
-            if host in all_server:  # host存在配置文件里
-                server_list[host] = {}  # host加入列表里
+            if host in all_server:  # host是否存在配置文件里
+                server_list[host] = {}  # host加入字典里
                 server_list[host]["user"] = config[host]["user"]
                 server_list[host]["password"] = config[host]["password"]
                 server_list[host]["port"] = int(config[host]["port"])
@@ -78,17 +80,15 @@ def fetch_server_list(hosts, groups):
         for group in group_list:
             if group in all_server:
                 for host in config[group]["ip"].split(","):
-                    if host in all_server:  # host存在配置文件里
+                    if host in all_server:  # host是否存在配置文件里
                         server_list[host] = {}  # host加入字典里
                         server_list[host]["user"] = config[host]["user"]
                         server_list[host]["password"] = config[host]["password"]
                         server_list[host]["port"] = int(config[host]["port"])
                     else:
                         print(host, "is not in host configure ")
-                        # server_list.append(host)
             else:
                 print("%s not in group.cfg" % group)
-
     return server_list
 
 
