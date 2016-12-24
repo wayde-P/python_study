@@ -1,6 +1,9 @@
 import select
 import socket
 import queue
+import json
+import os
+import datetime
 
 server = socket.socket()
 server.bind(('localhost', 9999))
@@ -38,6 +41,28 @@ while True:
         # 给客户端返回准备好的数据
         try:
             data = msg_queue[s].get_nowait()
-            s.send(data.upper())
+            info_dict = json.loads(data.decode())
+            info_dict['action'](info_dict)
+            # s.send(data.upper())
+            # info_dict={'action':"put",
+            #            'file_len':111,
+            #            'current_len':111,
+            #            'file_name':"b.file",
+            #            'data':b''
+            #            }
         except queue.Empty as e:
             outputs.remove(s)
+
+
+def put(s, info_dict):
+    base_list = os.listdir(os.path.dirname(os.path.abspath(__file__)))
+    file_name = info_dict['file_name']
+    if file_name in base_list:
+        s.send(b'1')
+        # todo dlslsl
+        return 0
+    else:
+        file_name = "%s/%s" % (os.path.dirname(os.path.abspath(__file__)), file_name)
+    data = info_dict['data']
+    with open(file_name, "wb+") as write_file:
+        write_file.write(data)

@@ -17,7 +17,8 @@ welcome:
 """)
 while True:
     msg = str(input("请输入[q]:").strip())
-    if len(msg) == 0: continue
+    if len(msg) == 0:
+        continue
     elif msg == "q":
         break
     elif msg.startswith("put"):
@@ -41,6 +42,7 @@ while True:
                 for line in read_file:
                     print("send data ......", line)
                     client.send(line)
+                client.recv(1024)
         else:
             print("%s 此文件不存在" % msg_li[1])
         continue
@@ -91,6 +93,6 @@ while True:
             received_size += len(data)
         print("接收到服务器的信息:\n", received_data.decode())
         # print("接收到服务器的信息:\n", received_data.decode(), data_len)
-    # print("接收到服务器的信息:", data)
-    # dataa = client.recv(1024)
+        # print("接收到服务器的信息:", data)
+        # dataa = client.recv(1024)
 client.close()
