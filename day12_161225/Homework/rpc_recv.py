@@ -19,7 +19,7 @@ def SSHRPCServer(cmd):
     # else:
     #     return fib(n - 1) + fib(n - 2)
     print("recv cmd:", cmd)
-    cmd_obj = subprocess.Popen(cmd.decode(), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    cmd_obj = subprocess.Popen(cmd.decode().split()[-1], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     result = cmd_obj.stdout.read() or cmd_obj.stderr.read()
     return result

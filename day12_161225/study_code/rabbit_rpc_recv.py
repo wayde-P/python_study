@@ -2,9 +2,9 @@ import pika
 import time
 import subprocess
 
-credentials = pika.PlainCredentials('alex', 'alex3714')
+credentials = pika.PlainCredentials('zewei', 'ZZW')
 connection = pika.BlockingConnection(pika.ConnectionParameters(
-    host='192.168.184.128', credentials=credentials))
+    host='192.168.50.136', credentials=credentials))
 
 channel = connection.channel()
 channel.queue_declare(queue='rpc_queue3')
