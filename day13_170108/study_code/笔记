@@ -1,0 +1,76 @@
+本节内容参考博客：
+    http://www.cnblogs.com/wupeiqi/articles/5132791.html
+    http://www.cnblogs.com/wupeiqi/articles/5713330.html
+    http://www.cnblogs.com/wupeiqi/articles/5699254.html
+
+    http://www.cnblogs.com/wupeiqi/articles/5748496.html
+
+
+一、redis
+    字符串：
+
+二、memcache
+
+三、ORM框架()
+    SQLAlchemy
+    a. 创建数据库表
+
+        1.py
+        class Foo:
+            __tablename__ = "tb1"
+            nid = xxxx
+            name = xxxx
+            email = xxxx
+
+        class UserInfo:
+            __tablename__ = "tb1"
+            nid = xxxx
+            name = xxxx
+            email = xxxx
+
+        # 连接数据库
+        # init_db()
+        # ORM模式，根据类创建数据库表 code first
+        # ORM模式，根据数据库表创建类 db first
+
+    b. 操作数据库内容
+        session = 连接会话
+        obj1 =Foo(nid=1,name='root',email='root@live.com')
+        session.add(obj1)
+
+        session.query(Foo).filter(Foo.nid > 1).delete()
+
+        session.query(Foo).filter(Foo.nid > 1).all()
+        session.query(Foo).filter(Foo.nid > 1).order_by()
+        session.query(Foo).filter(Foo.nid > 1).group_by()
+        session.query(Foo).filter(Foo.nid > 1)[1:10]
+        session.query(Foo).join(UserInfo,_and(Foo.id==UserInfo.uid...),isouter=True)..join(UserInfo,_and(Foo.id==UserInfo.uid...),isouter=True)..join(UserInfo,_and(Foo.id==UserInfo.uid...),isouter=True)
+作业：
+    SqlAchcmy应用：用户管理
+
+
+    1、用户表(FK)
+
+    2、用户类型表（普通用户，超级用户）
+
+    3、主机表（ip，port..）
+
+    4、关系表
+        1   1
+
+    功能：
+        登录（用户表）中验证
+        - 用户类型管理（增删改查）
+        - 用户管理（增删改查）
+        - 主机表管理（增删改查）-- 导入excel  # xlwt,xlrd
+        - 用户分配主机
+
+
+
+
+
+
+四、paramiko
+
+
+作业：堡垒机（paramiko，ORM）

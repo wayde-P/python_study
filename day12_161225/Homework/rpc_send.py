@@ -28,7 +28,7 @@ class SSHRpcClient(object):
                                    routing_key='rpc_queue3',
                                    properties=pika.BasicProperties(
                                        reply_to=self.callback_queue,
-                                       correlation_id=self.corr_id,
+                                       correlation_id=self.corr_id,  # 返回到哪个queue里面
                                    ),
                                    body=str(n))
         #
@@ -41,7 +41,7 @@ class SSHRpcClient(object):
             print("loop ", count)
             time.sleep(0.1)
             count += 1
-            self.connection.process_data_events()  # 以不阻塞的形式去检测有没有新事件
+            self.connection.process_data_events()  # 以非阻塞的形式去检测有没有新事件
             # 如果没事件，那就什么也不做， 如果有事件，就触发on_response事件
         return self.response
 
