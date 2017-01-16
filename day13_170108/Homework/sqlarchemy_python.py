@@ -82,11 +82,11 @@ def login():
 # def db_add(table,*args,**kwargs):
 #     info = table(kwargs)
 #     session.add(info)
-# 
+#
 # def db_delete(table,colunm,value,*args,**kwargs):
 #     session.query(table.colunm).filter_by(colunm=value).delete()
-# 
-# 
+#
+#
 # def db_update(table,colunm,value,new_value,*args,**kwargs):
 #     session.query(table.colunm).filter_by(colunm=value).update({colunm:new_value})
 
@@ -114,8 +114,8 @@ def user_type_manager():
     elif function_choise == 4:
         # print(session.query(users_type.tid,users_type.line_name).all())
         ret = session.query(users_type.tid, users_type.line_name).all()
-        for i in ret:
-            print(i)
+        for d in ret:
+            print(d)
 
 
 def user_manager():

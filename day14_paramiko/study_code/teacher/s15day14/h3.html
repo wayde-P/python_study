@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="margin: 0">
+
+
+<div>
+    <form action="http://192.168.12.90:8000/index/" method="POST" enctype="multipart/form-data">
+        <h1>用户登录</h1>
+        <input type="file" name="upload"/>
+
+        <p>用户名：<input type="text" name="username" value="root" placeholder="请输入用户名"/></p>
+        <p>密码：<input type="password" name="pwd" value="root"/></p>
+
+        <div>性别：
+            <div>男 <input type="radio" name="geasdf" value="1"/></div>
+            <div>女 <input type="radio" name="geasdf" value="0" checked="checked"/></div>
+        </div>
+        <div>
+            爱好：男 <input type="checkbox" name="hobby" value="11" checked="checked"/>
+            女 <input type="checkbox" name="hobby" value="22" checked="checked"/>
+            海涛 <input type="checkbox" name="hobby" value="海涛"/>
+        </div>
+        <select name="city1">
+            <option value="88">上海</option>
+            <option value="89" selected="selected">北京</option>
+            <option value="uu">广州</option>
+            <option value="sh">沙河</option>
+        </select>
+        <select name="city2" multiple>
+            <option value="88">上海</option>
+            <option value="89" selected="selected">北京</option>
+            <option value="uu" selected="selected">广州</option>
+            <option value="sh">沙河</option>
+        </select>
+
+        <textarea name="memo" placeholder="鸡汤...">来杯鸡汤...</textarea>
+
+
+        <input type="button" value="按钮"/>
+        <input type="submit" value="提交"/>
+        <input type="reset" value="重置"/>
+    </form>
+</div>
+<div>
+    asdkfj;alskdjf;a
+    <p></p>
+    <div>
+        YARN是Hadoop集群的资源管理系统。Hadoop2.0对MapReduce框架做了彻底的设计重构。YARN的基本设计思想是将MRv1中的JobTracker拆分成了两个独立的服务：一个**全局的资源管理器ResourceManager**和**每个应用程序特有的ApplicationMaste.
+    </div>
+</div>
+<div>
+    <h1>用户登录</h1>
+    <p>用户名：<input type="text"/></p>
+    <p>密码：<input type="password"/></p>
+    <input type="button" value="提交"/>
+    <input type="submit" value="提交"/>
+    <input type="reset" value="重置"/>
+</div>
+</body>
+</html>

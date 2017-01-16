@@ -1,0 +1,99 @@
+上节回顾
+    - memcache
+    - redis
+    - SQLAlchmey
+        - 类生成数据库表
+        - order,add,add_all,join,union...
+          自己写SQL语句
+        - relationship
+            - obj = relationship(backref='b')
+            - obj = relationship(backref='b',secondary="x")
+            
+今日内容
+    http://www.cnblogs.com/wupeiqi/articles/5699254.html
+    群共享 s15Html课件
+1. paramiko模块
+    
+    
+    https://github.com/paramiko/paramiko/blob/master/demos/interactive.py
+2. 实现跳板机
+
+    作业：数据库+paramiko实现
+    
+    
+    
+    
+    
+3. HTML
+    在服务器端就是一个文件，文件内部：
+        <h1>内容</h1>
+        <h2>内容</h2>
+        <div>...</div>
+        
+    学习：HTML标签的对应关系
+        
+    学习HTML：
+        - socket服务端
+        - 直接利用浏览器打开（*****）
+        - pycharm创建服务端
+    
+    1. 块级和内联
+    2.
+        div
+        span
+        a 
+        p 
+        <br/>
+        h1 ~ h6
+        input系列:
+            type='text' value='默认值'
+            type='password'
+            type='radio'    name='互斥' value='1' checked='checked'
+            type='checkbox' name='x'    value='1' checked='checked'
+            type='file'    => Form中加入属性 enctype="multipart/form-data" ，POST
+            type='botton' value='按钮上的文字'
+            type='submit' value='提交当前Form表单'
+            type='reset'  value='重置当前Form表单'
+        select name='city' muiltiple size='10'
+            option value='x'
+        textarea
+        ul
+            li
+        ol
+            li
+        dl
+            dt
+            dd
+        img
+        table
+            thead
+                tr,th
+            tbody
+                tr,td
+            # 合并单元格 rowspan colspan
+       fieldset
+            legend
+
+作业：
+      注册页面
+      跳转到其他页面
+      登录
+      
+      PS: 禁止使用模板，HTML缩进 D
+        
+CSS前夕：
+    height: 48px                    定义高度
+    width: 100px                    定义宽度
+    background-color: #5e4b7c;      背景颜色
+    color: white;                   字体颜色
+    line-height: 48px;              文本在48px中居中
+    text-align: left                调整当前文本在福标签中的位置
+    display: inline;
+    display: block;
+    display: inline-block;
+
+
+
+
+
+    
