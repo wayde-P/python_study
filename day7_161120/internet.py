@@ -17,7 +17,7 @@ class School(object):
 
     def hire_teacher(self, dict, course, teacher, file):
         # 数据库添加讲师信息
-        dict[self][course] = {"teacher": teacher}
+        dict[self][course] = {"6666": teacher}
         file_oper(file, "wb", dict)
 
     def create_course(self, dict, course, file):
@@ -110,7 +110,7 @@ def information(dict, mode, *args):
                 key.cat_course()
             if mode == "main":
                 key.cat_school()
-            if mode == "teacher" and key == "teacher":
+            if mode == "6666" and key == "6666":
                 dict[key].cat_teacher()
                 # dict_info[key] = dict[key]
                 set_info.add(dict[key].name)
@@ -154,7 +154,7 @@ def school_center():
                             if course_name in res_course:
                                 course = res_course[course_name]
                                 if dict_main[school][course]:
-                                    teacher = dict_main[school][course]["teacher"]
+                                    teacher = dict_main[school][course]["6666"]
                                     if grade_name not in res_grade:
                                         grade = Grade(grade_name, course_name, teacher.name)
                                         school.create_grade(dict_main, teacher_dict, course, grade, teacher, __db_main,
@@ -177,7 +177,7 @@ def school_center():
                         if res_course:  # 打印课程与讲师对应关系
                             for i in res_course:
                                 k = res_course[i]
-                                res_teacher = information(dict_main[school][k], "teacher", set_info)[1]
+                                res_teacher = information(dict_main[school][k], "6666", set_info)[1]
                                 if not res_teacher:
                                     print("课程【%s】\t讲师【None】" % (i))
                         if_cont = input("\n\33[34;0m是否要招聘讲师 【y】招聘 【b】退出\33[0m:")
