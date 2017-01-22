@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人注册</title>
+</head>
+<body>
+<div style="height: 76px;margin:0px; width: auto">
+    <!-- 标题栏-->
+    <div style="height:76Px ; width: auto ; margin-top: 0px;margin-bottom: 0px;margin-left: 106.5px;margin-right: 106.5px ;font-family: 'Microsoft Yahei'">
+        <!--网站图标-->
+        <div>
+            <a href="http://www.baidu.com"
+               style="background: url(icon.png) no-repeat;width: 160px;height: 50px;float: left;margin-top: 24px"></a>
+        </div>
+        <!--欢迎注册-->
+        <div style="float:left;height: 34px;margin-top: 34px;line-height: 34px;font-size: 24px;color: #333; padding-left: 30px ; font-family: 'Microsoft Yahei'">
+            欢迎注册
+        </div>
+        <div style="float: right;height: 34px;margin-top: 55px ; text-decoration: none">已有账号?
+            <a href="login.html" target="_self" style="text-decoration: none;color: #333;">请登录</a>
+        </div>
+
+    </div>
+    <!--d登录数据-->
+    <div>
+        <div style="width: 400px;font-family: 'Microsoft Yahei';margin: 50px auto 60px">
+            <form action="http://192.168.12.90:8000/index/" id="register-form" method="post">
+                <div style="float: right"><label>用 户 名: </label><input name="new" value="您的账户名"/></div>
+                <div style="float: right">设置密码: <input name="password" value="您的登录密码"/></div>
+                <div style="float: right">确认密码: <input name="cre_pwd" value="再次输入密码"/></div>
+                <div style="float:right;font-family: 'Microsoft Yahei';">
+                    <input style="float: right" type="submit" value="立即注册"/>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<div class="form-item form-item-account" id="form-item-account">
+    <label>用　户　名</label>
+    <txt style="position:
+    absolute; z-index: 2; line-height: 46px; margin-left: 20px; margin-top: 1px; font-size: 14px;
+    font-family: 'Microsoft YaHei', 'Hiragino Sans GB'; color: rgb(204, 204, 204); display: inline;">您的账户名和登录名
+    </txt>
+    <input type="text" id="form-account" name="regName" class="field" autocomplete="off" maxlength="20" placeholder=" "
+           default="<i class=&quot;i-def&quot;></i>支持中文、字母、数字、“-”“_”的组合，4-20个字符">
+    <input class="i-status"> </input>
+</div>
