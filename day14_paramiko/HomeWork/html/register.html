@@ -24,15 +24,36 @@
     </div>
     <!--d登录数据-->
     <div>
-        <div style="width: 400px;font-family: 'Microsoft Yahei';margin: 60px auto 60px;float: inherit">
+        <div style="width: 400px;font-family: 'Microsoft Yahei';margin: 60px auto 60px;text-align: center;border: 1px solid #dddddd">
             <form action="http://192.168.12.90:8000/index/" id="register-form" method="post">
-                <div style="float: inherit"><label>用 户 名: </label><input name="new" value="您的账户名"/></div>
-                <div style="float: inherit">设置密码: <input name="password" value="您的登录密码"/></div>
-                <div style="float: inherit">确认密码: <input name="cre_pwd" value="再次输入密码"/></div>
-                <div style="float:inherit;font-family: 'Microsoft Yahei';width: 400px">
-                    <input style="float: inherit" type="submit" value="立即注册"/>
+                <div style="text-align: center; margin-top: 10px">
+                    用 户 名 : <input name="new" value="您的账户名"/>
                 </div>
-
+                <div style="text-align: center;margin-top: 10px">
+                    设置密码: <input name="password" value="您的登录密码"/>
+                </div>
+                <div style="text-align: center;margin-top: 10px">
+                    确认密码: <input name="cre_pwd" value="再次输入密码"/>
+                </div>
+                <div style="text-align: center;margin-top: 10px; width: 400px">性别：
+                    男 <input type="radio" name="gender"/>
+                    女 <input type="radio" name="gender"/>
+                </div>
+                <div style="text-align: center;margin-top: 10px;">
+                    何处了解次网站：朋友<input type="checkbox"/> 广告<input type="checkbox"/> 其他<input type="checkbox"/>
+                </div>
+                <div style="margin-top: 10px;">
+                    你来自哪个城市：
+                    <select>
+                        <option>上海</option>
+                        <option>北京</option>
+                        <option>广州</option>
+                        <option>湖北</option>
+                    </select>
+                </div>
+                <div style="font-family: 'Microsoft Yahei';width: 400px;margin-top: 20px">
+                    <input style="text-align: center" type="submit" value="立即注册"/>
+                </div>
             </form>
         </div>
     </div>
