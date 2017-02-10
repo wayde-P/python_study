@@ -11,36 +11,40 @@
         <!--网站图标-->
         <div>
             <a href="http://www.baidu.com"
-               style="background: url(icon.png) no-repeat;width: 160px;height: 50px;float: left;margin-top: 24px"></a>
+               style="background-size:100% ; background: url(12.png) no-repeat;width: 160px;height: 64px;float: left;margin-top: 24px"></a>
         </div>
         <!--欢迎注册-->
         <div style="float:left;height: 34px;margin-top: 34px;line-height: 34px;font-size: 24px;color: #333; padding-left: 30px ; font-family: 'Microsoft Yahei'">
             欢迎注册
         </div>
         <div style="float: right;height: 34px;margin-top: 55px ; text-decoration: none">已有账号?
-            <a href="login.html" target="_self" style="text-decoration: none;color: #333;">请登录</a>
+            <a href="new_login.html" target="_self" style="text-decoration: none;color: #333;">请登录</a>
         </div>
 
     </div>
+    <hr width="100%" style="height:1px;border:none;border-top:1px solid #dddddd; text-align: center"/>
     <!--d登录数据-->
     <div>
         <div style="width: 400px;font-family: 'Microsoft Yahei';margin: 60px auto 60px;text-align: center;border: 1px solid #dddddd">
             <form action="http://192.168.12.90:8000/index/" id="register-form" method="post">
-                <div style="text-align: center; margin-top: 10px">
+                <div style="text-align: center; margin-top: 20px">
                     用 户 名 : <input name="new"  placeholder="请输入用户名"/>
                 </div>
                 <div style="text-align: center;margin-top: 10px">
-                    设置密码: <input name="password" placeholder="您的登录密码"/>
+                    设置密码: <input type="password" name="password" placeholder="您的登录密码"/>
                 </div>
                 <div style="text-align: center;margin-top: 10px">
-                    确认密码: <input name="cre_pwd" placeholder="再次输入密码"/>
+                    确认密码: <input type="password" name="cre_pwd" placeholder="再次输入密码"/>
                 </div>
                 <div style="text-align: center;margin-top: 10px; width: 400px">性别：
                     男 <input type="radio" name="gender" checked="checked"/>
                     女 <input type="radio" name="gender"/>
                 </div>
                 <div style="text-align: center;margin-top: 10px;">
-                    何处了解次网站：朋友<input type="checkbox" name="friend"/> 广告<input name="ad" type="checkbox"/> 其他<input name="other" type="checkbox"/>
+                    何处了解次网站：
+                    朋友<input type="checkbox" name="friend"/>
+                    广告<input name="ad" type="checkbox"/>
+                    其他<input name="other" type="checkbox"/>
                 </div>
                 <div style="margin-top: 10px;">
                     你来自哪个城市：
@@ -49,7 +53,14 @@
                         <option>北京</option>
                         <option>广州</option>
                         <option>湖北</option>
+                        <option>湖南</option>
+                        <option>河北</option>
+                        <option>河南</option>
+                        <option>不详</option>
                     </select>
+                </div>
+                <div style="margin-top: 10px">
+                    个人简介:<input type="text" name="" height="20px"/>
                 </div>
                 <div style="font-family: 'Microsoft Yahei';width: 400px;margin-top: 20px">
                     <input style="text-align: center;margin-bottom: 20px" type="submit" value="立即注册" />
