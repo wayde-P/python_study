@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .one{
+            width: 700px;
+            height: 300px;
+            border: 1px solid red;
+            position: relative;
+        }
+        .two{
+            width: 700px;
+            height: 300px;
+            border: 1px solid black;
+            position: relative;
+
+        }
+        .thr{
+            width: 700px;
+            height: 300px;
+            border: 1px solid deeppink;
+            position: relative;
+        }
+        .four{
+            width: 700px;
+            height: 300px;
+            border: 1px solid yellowgreen;
+            position: relative;
+        }
+        .one-balck{
+            width: 50px;
+            height: 50px;
+            background-color: yellowgreen;
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+        .two-balck{
+            width: 50px;
+            height: 50px;
+            background-color: yellowgreen;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        .thr-balck{
+            width: 50px;
+            height: 50px;
+            background-color: yellowgreen;
+            position: absolute;
+            right: 10px;
+            top:10px;
+        }
+        .four-balck{
+            width: 50px;
+            height: 50px;
+            background-color: yellowgreen;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        <div class="one-balck"></div>
+    </div>
+    <div class="two">
+        <div class="two-balck"></div>
+    </div>
+    <div class="thr">
+        <div class="thr-balck"></div>
+    </div>
+    <div class="four">
+        <div class="four-balck" onclick="gotop()"></div>
+    </div>
+</body>
+<script>
+    function gotop() {
+        document.body.scrollTop = 0;
+    }
+</script>
+</html>
