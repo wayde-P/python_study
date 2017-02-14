@@ -22,15 +22,15 @@ class SSH:
 
     def download(self, server_path, local_path):
         sftp = paramiko.SFTPClient.from_transport(self.transport)
-        # 将location.py 上传至服务器 /tmp/test.py
-        # sftp.put('/tmp/location.py', '/tmp/test.py')
+        # 将location.py 上传至服务器 /s1-login/test.py
+        # sftp.put('/s1-login/location.py', '/s1-login/test.py')
         # 将remove_path 下载到本地 local_path
         sftp.get(server_path, local_path)
 
     def upload(self, server_path, local_path):
         sftp = paramiko.SFTPClient.from_transport(self.transport)
-        # 将location.py 上传至服务器 /tmp/test.py
-        # sftp.put('/tmp/location.py', '/tmp/test.py')
+        # 将location.py 上传至服务器 /s1-login/test.py
+        # sftp.put('/s1-login/location.py', '/s1-login/test.py')
         # 将remove_path 下载到本地 local_path
         sftp.put(local_path, server_path)
 

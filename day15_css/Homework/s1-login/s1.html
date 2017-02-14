@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        .main {
+            margin: 0 auto;
+            width: 980px;
+            /*border:1px solid red;*/
+        }
+
+        .header {
+            margin: 10px auto;
+        }
+
+        .userinfo {
+            border: 1px solid #dddddd;
+            /*padding: 10px;*/
+            /*float: left;*/
+            position: relative;
+        }
+
+        .images {
+            padding: 10px;
+            float: left;
+        }
+
+        .login {
+            margin: 10px;
+            width: 330px;
+            height: 337px;
+            /*border:1px solid black;*/
+            float: left;
+        }
+
+        .login-input {
+            border: 1px solid #dddddd;
+            /*border-right-color: white;*/
+            text-align: center;
+            height: 33px;
+            width: 200px;
+            line-height: 31px;
+            float: left;
+        }
+
+        .login-input input {
+            height: 30px;
+            border: none;
+            /*float: left;*/
+        }
+
+        .login-yanzhengma {
+            border: 1px solid #dddddd;
+            /*border-right-color: white;*/
+            text-align: center;
+            height: 33px;
+            width: 100px;
+            line-height: 31px;
+            float: left;
+            margin-right: 2px;
+            /*height: 30px;*/
+            /*border: none;*/
+        }
+
+        .login-yanzhengma input {
+            height: 30px;
+            width: 70px;
+            border: none;
+        }
+
+        .tishixinxi {
+            margin-top: 8px;
+            margin-right: 10px;
+            width: 80px;
+            float: left;
+            text-align: right;
+            font-size: 15px;
+            font-family: 'Microsoft Yahei'
+        }
+
+        .login img {
+            /*float: left;*/
+            border: none;
+            line-height: 33px;
+            vertical-align: middle;
+        }
+
+        .line {
+            margin-top: 25px;
+            /*border: 1px solid rebeccapurple;*/
+        }
+
+        .auto-login {
+            margin-top: 25px;
+            margin-left: 90px;
+            font-size: 12px;
+            font-family: 'Microsoft Yahei';
+        }
+
+        .auto-login a {
+            /*display: inline-block;*/
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .login-bottem {
+            margin-left: 90px;
+            margin-top: 25px;
+            width: 200px;
+            height: 28px;
+            background-color: #231F20;
+            font-size: 16px;
+            color: white;
+            font-weight: 100;
+            text-align: center;
+            line-height: 28px;
+        }
+
+        .register {
+            width: 110px;
+            height: 40px;
+            /*border:1px solid red;*/
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            background-color: #97435B;
+            position: absolute;
+            right: 1px;
+            bottom: 1px;
+        }
+
+        .tail {
+            margin-top: 10px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            font-family: "Microsoft Yahei";
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="header">
+        <img src="images/banner.png">
+    </div>
+    <div class="userinfo">
+        <div class="images">
+            <img src="images/zuocetupian.jpg" alt="">
+        </div>
+        <div class="login">
+            <div class="line">
+                <div class="tishixinxi" for="username">
+                    <label style="display: inline-block; color: red ; ">*</label>
+                    <label for="username">用户名:</label>
+                </div>
+                <div class="login-input">
+                    <input type="text" id="username" placeholder="请输入用户名">
+                    <img src="images/登录名.png" alt="">
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="line">
+                <div class="tishixinxi" for="password">
+                    <label style="display: inline-block; color: red ; ">*</label>
+                    <label for="password">密码:</label>
+                </div>
+                <div class="login-input">
+                    <input type="password" id="password" placeholder="请输入密码">
+                    <img src="images/密码.png" alt="">
+
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="line">
+                <div class="tishixinxi" for="password">
+                    <label style="display: inline-block; color: red ; ">*</label>
+                    <label for="yanzhengma">验证码:</label>
+                </div>
+                <div class="login-yanzhengma">
+                    <input type="text" id="yanzhengma" placeholder="验证码">
+                </div>
+                <!--<img src="images/yanzhengma.jpg" alt="">-->
+                <a href="http://www.baidu.com"
+                   style=" background-size:100% ;background: url(images/yanzhengma.jpg);width: 97px; height: 31px"></a>
+                <a href="http://www.baidu.com"
+                   style="background-size:100% ; background: url(images/yanzhengma.jpg);width: 97px;height: 31px;float: left"></a>
+                <div style="clear: both"></div>
+            </div>
+            <div class="auto-login">
+                <input type="checkbox" value="autologin">
+                <lable>自动登录</lable>
+                <a href="#">忘记密码?</a>
+            </div>
+            <div class="login-bottem">
+                <b>登&nbsp录</b>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+        <div class="register">
+            <b>免费注册>></b>
+        </div>
+    </div>
+    <div class="tail">
+        ©CopyRight 2006-2016 cs1.5.Net Inc All Rights Reserved. 张泽伟 版权所有
+    </div>
+    <div style="clear: both"></div>
+</div>
+</body>
+</html>

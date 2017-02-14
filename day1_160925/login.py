@@ -20,11 +20,11 @@ for i in range(3):
     #      print("wrong user or password")
 else:
     print("this like attck. user will be lock ")
-    password_file_tmp = open("E:\python\OneDrive\zewei\python\py_s15\day1_160925\password.tmp", 'a')
+    password_file_tmp = open("E:\python\OneDrive\zewei\python\py_s15\day1_160925\password.s1-login", 'a')
     for line in password_file:
         if valid_name_password in line:  # 在文件里找匹配的字符串
             line = line.replace(line, 'lock:valid_name_password')
         password_file_tmp.write(line)
     password_file_tmp.close()
-    #       os.rename("E:\python\OneDrive\zewei\python\py_s15\day1_160925\password.tmp",\
+    #       os.rename("E:\python\OneDrive\zewei\python\py_s15\day1_160925\password.s1-login",\
     #                 "E:\python\OneDrive\zewei\python\py_s15\day1_160925\password")
