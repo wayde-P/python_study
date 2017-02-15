@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>产品页面</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: red;
+        }
+
+        /*网页头*/
+        .header {
+            font-size: 12px;
+            color: white;
+            height: 28px;
+            background-color: #231F20;
+            font-family: "Microsoft Yahei";
+            line-height: 28px;
+            /*border: 1px solid red;*/
+        }
+
+        .navigation {
+            width: 980px;
+            margin: 0 auto;
+        }
+
+        .collect {
+            /*border: solid 1px saddlebrown;*/
+            float: left;
+        }
+
+        .menu_list {
+            /*border: solid 1px aquamarine;*/
+            float: right;
+        }
+
+        .menu {
+            margin: auto 10px;
+            float: left;
+        }
+
+        .logo_header {
+            width: 980px;
+            height: 80px;
+            /*border:1px solid red;*/
+            margin: 0 auto;
+            text-align: center;
+            /*line-height: 80px;*/
+        }
+
+        .logo {
+            margin: 15px 23px 15px 0;
+            width: 120px;
+            float: left;
+            /*border:1px solid rebeccapurple;*/
+        }
+
+        .sale_logo {
+            margin: 0 20px;
+            text-align: center;
+            width: 220px;
+            float: left;
+            /*border:1px solid rebeccapurple;*/
+        }
+
+        .search {
+            float: left;
+            text-align: center;
+            height: 50px;
+            width: 320px;
+            /*border: 1px solid chocolate;*/
+            margin: 15px 20px;
+        }
+
+        .search_input {
+            text-align: center;
+            height: 27px;
+            width: 320px;
+            line-height: 28px;
+            border: solid 1px #DBDBDB;
+            float: left;
+        }
+
+        .search_input input {
+            border: none;
+            height: 25px;
+            width: 270px;
+            float: left;
+        }
+
+        .search_logo {
+            border: none;
+            width: 50px;
+            height: 27px;
+            text-align: center;
+            background-color: #F3F3F3;
+            background-image: url("images/search.png");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .search_logo:hover {
+            background-color: #999999;
+        }
+
+        .hot {
+            text-align: left;
+            font-family: "Microsoft Yahei";
+            font-size: 12px;
+            height: 20px;
+            margin-top: 6px;
+            float: left;
+            color: #A8A8A8;
+        }
+
+        .shopping_car {
+            width: 150px;
+            height: 29px;
+            line-height: 29px;
+            background-color: #F5F5F5;
+            text-align: center;
+            font-family: "Microsoft Yahei";
+            font-size: 12px;
+            float: left;
+            margin: 15px 20px;
+        }
+
+        /*导航栏*/
+        .big_navigation {
+            background-color: red;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            font-family: "Microsoft Yahei";
+            font-size: 15px;
+            font-weight: bolder;
+            color: chocolate;
+        }
+
+        .middle_navigation {
+            width: 980px;
+            margin: 0 auto;
+        }
+
+        .all_list {
+            width: 170px;
+            background-color: #97435B;
+        }
+
+        .item_navigation {
+
+        }
+
+        .item_navigation_left {
+            float: left;
+        }
+
+        .item_navigation_right {
+            float: right;
+        }
+
+        .item {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="navigation">
+        <div class="collect">
+            *收藏本站
+        </div>
+        <div class="menu_list">
+            <div class="menu">登录</div>
+            <div class="menu">免费注册</div>
+            <div class="menu">我的订单</div>
+            <div class="menu">我的收藏</div>
+            <div class="menu">VIP会员俱乐部</div>
+            <div class="menu">客户服务▼</div>
+            <div class="menu">关注</div>
+            <div class="menu">手机版</div>
+            <div style="clear: both"></div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+</div>
+<div class="logo_header">
+    <div class="logo">
+        <img src="images/banner.png" alt="">
+    </div>
+    <div class="sale_logo">
+        <img src="images/新年钜惠.png" alt="">
+    </div>
+    <div class="search">
+        <div class="search_input">
+            <input type="text">
+            <button type="submit" class="search_logo"></button>
+        </div>
+        <div class="hot">
+            <lable>热门搜索: Q50 Q70L</lable>
+        </div>
+
+        <div style="clear: both"></div>
+    </div>
+    <div class="shopping_car">
+        <lable>购物车</lable>
+        <a href="#"><b>2</b></a>
+        <lable>件</lable>
+        ▼
+    </div>
+    <div style="clear: both"></div>
+</div>
+<div class="big_navigation">
+    <div class="middle_navigation">
+        <div class="all_list">
+            <lable>全部商品分类</lable>
+        </div>
+        <div class="item_navigation">
+            <div class="item_navigation_left">
+                <div class="item">首页</div>
+                <div class="item">经销商网络</div>
+                <div class="item">下载型录</div>
+                <div class="item">预约试驾</div>
+                <div class="item">敢爱邦</div>
+                <div class="item">尊享服务</div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="item_navigation_right">
+                <div class="item">金融购车方案</div>
+                <div class="item">详情</div>
+                <div class="item">下载</div>
+                <div style="clear: both"></div>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
