@@ -135,7 +135,7 @@
 
         /*导航栏*/
         .big_navigation {
-            background-color: red;
+            background-color: #555554;
             height: 36px;
             line-height: 36px;
             text-align: center;
@@ -153,7 +153,7 @@
         .all_list {
             float: left;
             width: 170px;
-            background-color: #97435B;
+            background-color: #231f20;
         }
 
         .item_navigation {
@@ -176,7 +176,7 @@
         }
 
         .item:hover {
-            background-color: #97435B;
+            background-color: #231f20;
             /*border: 10px;*/
         }
 
@@ -294,6 +294,7 @@
             height: 33px;
             line-height: 33px;
             padding-left: 12px;
+            padding-right: 5px;
             background-color: #f9f9f9;
         }
 
@@ -315,8 +316,122 @@
             float: right;
         }
 
+        .sort_right_info {
+            float: left;
+            padding-right: 10px;
+            border-right: 1px solid #eaeaea;
+        }
+
+        .pagination {
+            float: left;
+            /*margin-left: 10px;*/
+            text-align: center;
+            margin: 0 auto;
+
+        }
         .big_red {
             color: red;
+            float: left;
+            margin-left: 5px;
+            /*padding-right: 2px;*/
+        }
+
+        .arrows {
+            float: left;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #DBDBDB;
+            background-color: #ffffff;
+            margin: 6px 2px;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        .all_page {
+            float: left;
+            margin-right: 10px;
+            /*margin-left: 5px;*/
+        }
+
+        .product {
+            width: 180px;
+            height: 200px;
+            text-align: center;
+            border: 1px solid #DBDBDB;
+            margin: 8px 8px;
+            float: left;
+        }
+
+        .product_img {
+            margin-top: 5px;
+            text-align: center;
+            width: 180px;
+            height: 95px;
+            /*border: 1px solid #DBDBDB;*/
+        }
+
+        .product_info {
+            margin: 15px auto;
+            font-size: 13px;
+        }
+
+        .price_num {
+            text-align: center;
+            height: 20px;
+            line-height: 20px;
+        }
+
+        .num_control {
+            border: 1px solid #DBDBDB;
+            float: left;
+            text-align: center;
+            height: 20px;
+            line-height: 20px;
+        }
+
+        .num {
+            float: left;
+        }
+
+        .num input {
+            border-top: none;
+            border-bottom: none;
+            border-right: solid 1px #DBDBDB;
+            border-left: solid 1px #DBDBDB;
+            width: 25px;
+            height: 18px;
+            float: left;
+            text-align: center;
+        }
+
+        .plus_minus {
+            width: 18px;
+            height: 18px;
+            text-align: center;
+            float: left;
+            line-height: 18px;
+        }
+
+        .price {
+            float: left;
+            font-size: 13px;
+            margin-left: 7px;
+            width: 66px;
+            text-align: left;
+            /*margin-right: 22px;*/
+            color: red;
+            font-weight: bolder;
+        }
+
+        .mai {
+            float: left;
+            font-weight: bolder;
+            font-size: 12px;
+            width: 30px;
+            height: 22px;
+            background-color: red;
+            margin-left: 5px;
+            color: white;
         }
     </style>
 </head>
@@ -574,13 +689,283 @@
                 <div class="pagination">
                     <div class="big_red">1</div>
                     <div class="all_page">/675</div>
-                    <div class="arrows">11331</div>
-                    <div class="arrows">111</div>
+                    <div class="arrows">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        <!--<i class="fa fa-angle-left" aria-hidden="true"></i>-->
+                        <!--<i class="fa fa-caret-square-o-right" aria-hidden="true"></i>-->
+                    </div>
+                    <div class="arrows">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        <!--<i class="fa fa-angle-right" aria-hidden="true"></i>-->
+                        <!--<i class="fa fa-caret-square-o-right" aria-hidden="true"></i>-->
+                    </div>
                 </div>
             </div>
             <div style="clear: both"></div>
         </div>
-        <div class="product_list"></div>
+        <div class="product_list">
+            <div class="product">
+                <div class="product_img">
+                    <img src="images/q50.png" alt="">
+                </div>
+                <div class="product_info">
+                    英菲尼迪Q50 <br>高科技豪华运动座驾
+                </div>
+                <div class="price_num">
+                    <div class="price">¥32.58万</div>
+                    <div class="num_control">
+                        <div class="plus_minus">
+                            -
+                        </div>
+                        <div class="num">
+                            <input type="text" value="1">
+                        </div>
+                        <div class="plus_minus">
+                            +
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div class="mai">买</div>
+                    <div style="clear: both"></div>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="product">
+                <div class="product_img">
+                    <img src="images/q50l.png" alt="">
+                </div>
+                <div class="product_info">
+                    英菲尼迪Q50L <br>高科技豪华运动座驾
+                </div>
+                <div class="price_num">
+                    <div class="price">¥27.98万</div>
+                    <div class="num_control">
+                        <div class="plus_minus">
+                            -
+                        </div>
+                        <div class="num">
+                            <input type="text" value="1">
+                        </div>
+                        <div class="plus_minus">
+                            +
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div class="mai">买</div>
+                    <div style="clear: both"></div>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="product">
+                <div class="product_img">
+                    <img src="images/q60.png" alt="">
+                </div>
+                <div class="product_info">
+                    英菲尼迪Q60 <br>硬顶敞篷跑车
+                </div>
+                <div class="price_num">
+                    <div class="price">¥69.9万</div>
+                    <div class="num_control">
+                        <div class="plus_minus">
+                            -
+                        </div>
+                        <div class="num">
+                            <input type="text" value="1">
+                        </div>
+                        <div class="plus_minus">
+                            +
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div class="mai">买</div>
+                    <div style="clear: both"></div>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="product">
+                <div class="product_img">
+                    <img src="images/q70.png" alt="">
+                </div>
+                <div class="product_info">
+                    新英菲尼迪Q70L <br>豪华商务座驾
+                </div>
+                <div class="price_num">
+                    <div class="price">¥39.98万</div>
+                    <div class="num_control">
+                        <div class="plus_minus">
+                            -
+                        </div>
+                        <div class="num">
+                            <input type="text" value="1">
+                        </div>
+                        <div class="plus_minus">
+                            +
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div class="mai">买</div>
+                    <div style="clear: both"></div>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="product">
+                <div class="product_img">
+                    <img src="images/qx30.png" alt="">
+                </div>
+                <div class="product_info">
+                    全新英菲尼迪QX30 <br>唯敢，纵情锋芒
+                </div>
+                <div class="price_num">
+                    <div class="price">¥24.98万</div>
+                    <div class="num_control">
+                        <div class="plus_minus">
+                            -
+                        </div>
+                        <div class="num">
+                            <input type="text" value="1">
+                        </div>
+                        <div class="plus_minus">
+                            +
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div class="mai">买</div>
+                    <div style="clear: both"></div>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="product">
+                <div class="product_img">
+                    <img src="images/qx50.png" alt="">
+                </div>
+                <div class="product_info">
+                    英菲尼迪QX50 <br>风尚智能四驱SUV
+                </div>
+                <div class="price_num">
+                    <div class="price">¥34.98万</div>
+                    <div class="num_control">
+                        <div class="plus_minus">
+                            -
+                        </div>
+                        <div class="num">
+                            <input type="text" value="1">
+                        </div>
+                        <div class="plus_minus">
+                            +
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div class="mai">买</div>
+                    <div style="clear: both"></div>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="product">
+                <div class="product_img">
+                    <img src="images/QX60.png" alt="">
+                </div>
+                <div class="product_info">
+                    英菲尼迪QX60 <br>商务舱级豪华七座SUV
+                </div>
+                <div class="price_num">
+                    <div class="price">¥51.8万</div>
+                    <div class="num_control">
+                        <div class="plus_minus">
+                            -
+                        </div>
+                        <div class="num">
+                            <input type="text" value="1">
+                        </div>
+                        <div class="plus_minus">
+                            +
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div class="mai">买</div>
+                    <div style="clear: both"></div>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="product">
+                <div class="product_img">
+                    <img src="images/qx70.png" alt="">
+                </div>
+                <div class="product_info">
+                    英菲尼迪QX70 <br>先锋跑车型SUV
+                </div>
+                <div class="price_num">
+                    <div class="price">¥77.8万</div>
+                    <div class="num_control">
+                        <div class="plus_minus">
+                            -
+                        </div>
+                        <div class="num">
+                            <input type="text" value="1">
+                        </div>
+                        <div class="plus_minus">
+                            +
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div class="mai">买</div>
+                    <div style="clear: both"></div>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="product">
+                <div class="product_img">
+                    <img src="images/qx80.png" alt="">
+                </div>
+                <div class="product_info">
+                    2016英菲尼迪QX80 <br>全尺寸SUV陆上奢华专机
+                </div>
+                <div class="price_num">
+                    <div class="price">¥119.8万</div>
+                    <div class="num_control">
+                        <div class="plus_minus">
+                            -
+                        </div>
+                        <div class="num">
+                            <input type="text" value="1">
+                        </div>
+                        <div class="plus_minus">
+                            +
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div class="mai">买</div>
+                    <div style="clear: both"></div>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="product">
+                <div class="product_img">
+                    <img src="images/esq-al.png" alt="">
+                </div>
+                <div class="product_info">
+                    特立独型的紧凑运动SUV <br>和您一起释放内心
+                </div>
+                <div class="price_num">
+                    <div class="price">¥18.9万</div>
+                    <div class="num_control">
+                        <div class="plus_minus">
+                            -
+                        </div>
+                        <div class="num">
+                            <input type="text" value="1">
+                        </div>
+                        <div class="plus_minus">
+                            +
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div class="mai">买</div>
+                    <div style="clear: both"></div>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div style="clear: both"></div>
+        </div>
     </div>
     <div style="clear: both"></div>
 </div>
