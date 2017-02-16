@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>产品页面</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <style>
         * {
             margin: 0;
+            font-family: "Microsoft Yahei";
         }
 
         a {
@@ -17,10 +19,10 @@
         .header {
             font-size: 12px;
             color: white;
-            height: 28px;
+            height: 23px;
             background-color: #231F20;
             font-family: "Microsoft Yahei";
-            line-height: 28px;
+            line-height: 23px;
             /*border: 1px solid red;*/
         }
 
@@ -44,6 +46,7 @@
             float: left;
         }
 
+        /*logo栏*/
         .logo_header {
             width: 980px;
             height: 80px;
@@ -112,7 +115,7 @@
             text-align: left;
             font-family: "Microsoft Yahei";
             font-size: 12px;
-            height: 20px;
+            /*height: 20px;*/
             margin-top: 6px;
             float: left;
             color: #A8A8A8;
@@ -168,7 +171,141 @@
 
         .item {
             float: left;
-            margin: 0 10px;
+            margin: 0 auto;
+            width: 70px;
+        }
+
+        .item:hover {
+            background-color: #97435B;
+            /*border: 10px;*/
+        }
+
+        /*商品介绍主体*/
+        .main {
+            width: 980px;
+            margin: 0 auto;
+            /*border: 1px solid chartreuse;*/
+        }
+
+        /*左侧分类*/
+        .car_classify {
+            width: 170px;
+            float: left;
+        }
+
+        .detailed_classification {
+            border: 1px solid #DBDBDB;
+        }
+
+        .type {
+            padding: 6px;
+            border-bottom: dashed 1px #DBDBDB;
+        }
+
+        .type_header {
+            font-size: 15px;
+            margin-bottom: 5px;
+            color: black;
+        }
+
+        .type_classis {
+            margin: 4px;
+            font-size: 12px;
+        }
+
+        .type_classis_item {
+            margin: 0 5px;
+            float: left;
+            color: #666666;
+        }
+
+        .hot_info {
+            border: 1px solid #DBDBDB;
+            padding: 5px;
+            font-size: 15px;
+            background-color: #f5f5f5;
+            color: #333333;
+        }
+
+        .item_main {
+            margin-left: 10px;
+            margin-top: 10px;
+            /*border: solid 1px red;*/
+            width: 795px;
+            float: left;
+        }
+
+        .choose_route {
+            font-size: 12px;
+            height: 36px;
+            line-height: 36px;
+        }
+
+        .detailed {
+            border: 1px solid #DBDBDB;
+            position: relative;
+        }
+
+        .choosed {
+            border-top: dashed 1px #DBDBDB;
+            font-size: 13px;
+            height: 40px;
+            line-height: 40px;
+            /*padding: 15px auto;*/
+        }
+
+        .hint_left {
+            width: 70px;
+            text-align: right;
+            float: left;
+            font-weight: bolder;
+            margin-right: 20px;
+        }
+
+        .hint_right {
+            float: left;
+            text-align: left;
+        }
+
+        .hint_right_item {
+            float: left;
+            width: 60px;
+        }
+
+        .more {
+            height: 30px;
+            width: 120px;
+            position: absolute;
+            border-left: 1px solid #DBDBDB;
+            border-right: 1px solid #DBDBDB;
+            border-bottom: 1px solid #DBDBDB;
+            font-size: 13px;
+            text-align: center;
+            line-height: 30px;
+            right: 330px;
+            top: 164px;
+            background-color: white;
+        }
+
+        .sort {
+            border: 1px solid #DBDBDB;
+            margin-top: 40px;
+            font-size: 13px;
+            height: 33px;
+            line-height: 33px;
+            padding-left: 12px;
+            background-color: #f9f9f9;
+        }
+
+        .sort span {
+            float: left;
+            margin-right: 20px;
+        }
+
+        .sort_item {
+            float: left;
+            width: 50px;
+
         }
     </style>
 </head>
@@ -184,21 +321,23 @@
             <div class="menu">我的订单</div>
             <div class="menu">我的收藏</div>
             <div class="menu">VIP会员俱乐部</div>
-            <div class="menu">客户服务▼</div>
+            <div class="menu">客户服务
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </div>
             <div class="menu">关注</div>
             <div class="menu">手机版</div>
             <div style="clear: both"></div>
         </div>
-        <div style="clear: both"></div>
+            <div style="clear: both"></div>
+        </div>
     </div>
-</div>
 <div class="logo_header">
     <div class="logo">
         <img src="images/banner.png" alt="">
-    </div>
+        </div>
     <div class="sale_logo">
         <img src="images/新年钜惠.png" alt="">
-    </div>
+        </div>
     <div class="search">
         <div class="search_input">
             <input type="text">
@@ -214,35 +353,216 @@
         <lable>购物车</lable>
         <a href="#"><b>2</b></a>
         <lable>件</lable>
-        ▼
+        <i class="fa fa-caret-down" aria-hidden="true"></i>
     </div>
-    <div style="clear: both"></div>
-</div>
+        <div style="clear: both"></div>
+    </div>
 <div class="big_navigation">
     <div class="middle_navigation">
         <div class="all_list">
             <lable>全部商品分类</lable>
-        </div>
+            </div>
         <div class="item_navigation">
             <div class="item_navigation_left">
                 <div class="item">首页</div>
-                <div class="item">经销商网络</div>
-                <div class="item">下载型录</div>
+                <div class="item">经销商</div>
+                <div class="item">下载</div>
                 <div class="item">预约试驾</div>
                 <div class="item">敢爱邦</div>
                 <div class="item">尊享服务</div>
                 <div style="clear: both"></div>
             </div>
             <div class="item_navigation_right">
-                <div class="item">金融购车方案</div>
+                <div class="item">金融购车</div>
                 <div class="item">详情</div>
                 <div class="item">下载</div>
                 <div style="clear: both"></div>
             </div>
-            <div style="clear: both"></div>
+                <div style="clear: both"></div>
+            </div>
         </div>
     </div>
+<div class="main">
+    <!--分类主体-->
+    <div class="car_classify">
+        <!--分类框-->
+        <div class="detailed_classification">
+            <!--车型和分类-->
+            <div class="type">
+                <div class="type_header"><b>轿车</b></div>
+                <div class="type_classis">
+                    <div class="type_classis_item">Q50</div>
+                    <div class="type_classis_item">Q50L</div>
+                    <div class="type_classis_item">Q60</div>
+                    <div class="type_classis_item">Q70L</div>
+                    <div style="clear: both"></div>
+                </div>
+            </div>
+            <div class="type">
+                <div class="type_header"><b>轿跑</b></div>
+                <div class="type_classis">
+                    <div class="type_classis_item">Q50</div>
+                    <div class="type_classis_item">Q50L</div>
+                    <div class="type_classis_item">Q60</div>
+                    <div class="type_classis_item">Q70L</div>
+                    <div style="clear: both"></div>
+                </div>
+            </div>
+            <div class="type">
+                <div class="type_header"><b>混合动力</b></div>
+                <div class="type_classis">
+                    <div class="type_classis_item">Q50</div>
+                    <div class="type_classis_item">Q70L</div>
+                    <div class="type_classis_item">QX60</div>
+                    <div style="clear: both"></div>
+                </div>
+            </div>
+            <div class="type">
+                <div class="type_header"><b>SUV</b></div>
+                <div class="type_classis">
+                    <div class="type_classis_item">QX30</div>
+                    <div class="type_classis_item">QX50</div>
+                    <div class="type_classis_item">QX60</div>
+                    <div class="type_classis_item">QX70</div>
+                    <div class="type_classis_item">QX80</div>
+                    <div class="type_classis_item">ESQ</div>
+                    <div style="clear: both"></div>
+                </div>
+            </div>
+        </div>
+        <!--热销排行-->
+        <div class="hot">
+            <div class="hot_info">
+                <lable><b>热销排行榜</b></lable>
+            </div>
+            <div class="detailed_classification">
+                <div class="type">
+                    <div class="type_header"><b>轿车</b></div>
+                    <div class="type_classis">
+                        <div class="type_classis_item">Q50L</div>
+                        <div class="type_classis_item">Q70L</div>
+                        <div style="clear: both"></div>
+                    </div>
+                </div>
+                <div class="type">
+                    <div class="type_header"><b>轿跑</b></div>
+                    <div class="type_classis">
+                        <div class="type_classis_item">Q50</div>
+                        <div class="type_classis_item">Q50L</div>
+                        <div class="type_classis_item">Q60</div>
+                        <div class="type_classis_item">Q70L</div>
+                        <div style="clear: both"></div>
+                    </div>
+                </div>
+                <div class="type">
+                    <div class="type_header"><b>混合动力</b></div>
+                    <div class="type_classis">
+                        <div class="type_classis_item">Q70L</div>
+                        <div style="clear: both"></div>
+                    </div>
+                </div>
+                <div class="type">
+                    <div class="type_header"><b>SUV</b></div>
+                    <div class="type_classis">
+                        <div class="type_classis_item">QX30</div>
+                        <div class="type_classis_item">QX50</div>
+                        <div class="type_classis_item">QX60</div>
+                        <div class="type_classis_item">ESQ</div>
+                        <div style="clear: both"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <!--商品页-->
+    <div class="item_main">
+        <div class="choose_route">
+            <lable>轿车
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                Q50
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                Q50
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                2.0T舒适版
+            </lable>
+        </div>
+        <!--材质.品牌.风格-->
+        <div class="detailed">
+            <div class="choosed">
+                <div class="hint_left">
+                    您已选择:
+                </div>
+                <div class="hint_right">
+                    <div class="hint_right_item">名贵跑车</div>
+                    <div class="hint_right_item">限量款</div>
+                    <div class="hint_right_item">ESQ</div>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="choosed">
+                <div class="hint_left">
+                    品牌:
+                </div>
+                <div class="hint_right">
+                    <div class="hint_right_item">infiniti</div>
+                    <div class="hint_right_item">infiniti</div>
+                    <div class="hint_right_item">infiniti</div>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="choosed">
+                <div class="hint_left">
+                    风格:
+                </div>
+                <div class="hint_right">
+                    <div class="hint_right_item">闷骚</div>
+                    <div class="hint_right_item">阳光</div>
+                    <div class="hint_right_item">浪漫</div>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="choosed">
+                <div class="hint_left">
+                    材质:
+                </div>
+                <div class="hint_right">
+                    <div class="hint_right_item">金属</div>
+                    <div class="hint_right_item">珍珠</div>
+                    <div class="hint_right_item">纸板</div>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="more">
+                更多选项
+                <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+            </div>
+        </div>
+        <!--销量 翻页 -->
+        <div class="sort">
+            <div class="sort_left">
+                <span>排序:</span>
+                <div class="sort_item">
+                    <a href="#">价格</a>
+                    <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+                </div>
+                <div class="sort_item">
+                    <a href="#">销量</a>
+                    <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+                </div>
+                <div class="sort_item">
+                    <a href="#">最新</a>
+                    <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="sort_right">
 
+            </div>
+        </div>
+        <div class="product_list"></div>
+    </div>
+    <div style="clear: both"></div>
 </div>
 </body>
 </html>
