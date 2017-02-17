@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            font-family: "Microsoft Yahei";
+        }
+
+        a {
+            text-decoration: none;
+            color: #0466ae;
+            font-size: 10px;
+        }
+
+        /*网页头*/
+        .header {
+            font-size: 12px;
+            color: white;
+            height: 23px;
+            background-color: #231F20;
+            font-family: "Microsoft Yahei";
+            line-height: 23px;
+            /*border: 1px solid red;*/
+        }
+
+        .navigation {
+            width: 980px;
+            margin: 0 auto;
+        }
+
+        .collect {
+            /*border: solid 1px saddlebrown;*/
+            float: left;
+        }
+
+        .menu_list {
+            /*border: solid 1px aquamarine;*/
+            float: right;
+        }
+
+        .menu {
+            margin: auto 10px;
+            float: left;
+        }
+
+        /*logo*/
+        .logo_header {
+            width: 980px;
+            height: 80px;
+            /*border:1px solid red;*/
+            margin: 0 auto;
+        }
+
+        .logo {
+            margin: 15px 23px 15px 0;
+            width: 120px;
+            float: left;
+            /*border:1px solid rebeccapurple;*/
+        }
+
+        .gouwuche {
+            text-align: left;
+            /*line-height: 80px;*/
+            font-size: 20px;
+            font-weight: bolder;
+            margin: 0 auto;
+            width: 980px;
+        }
+
+        .schedule_logo {
+            margin: 15px 20px;
+            text-align: center;
+            width: 520px;
+            float: right;
+            /*border:1px solid rebeccapurple;*/
+        }
+
+        /*main页头*/
+        .main {
+            width: 980px;
+            margin: 10px auto;
+            border: solid 1px #e1e1e1;
+        }
+
+        .main_header {
+            text-align: center;
+            background-color: #f7f7f7;
+            line-height: 30px;
+            height: 30px;
+            font-size: 13px;
+            /*border: 1px solid red;*/
+        }
+
+        .product_banner {
+            width: 358px;
+            float: left;
+            /*border: 1px solid red;*/
+        }
+
+        .jiage {
+            width: 118px;
+            float: left;
+            /*border: 1px solid hotpink;*/
+        }
+
+        .shuliang {
+            width: 150px;
+            float: left;
+        }
+
+        .product_list {
+            text-align: center;
+            font-size: 13px;
+            /*border: 1px solid #5e4b7c;*/
+        }
+
+        .product_list_line {
+            border-top: solid 1px #dddddd;
+            padding: 5px auto;
+            height: 80px;
+            line-height: 80px;
+            /*margin: 10px auto;*/
+            /*border: 1px solid hotpink;*/
+        }
+
+        .product_img {
+            width: 358px;
+            float: left;
+            text-align: center;
+            /*border: 1px solid red;*/
+            height: 80px;
+            line-height: 80px;
+            font-weight: bolder;
+        }
+
+        .product_info {
+            text-align: left;
+            line-height: 20px;
+            float: left;
+            margin: 10px;
+        }
+
+        .font_red_bolder {
+            color: red;
+            font-weight: bolder;
+        }
+
+        .font_color {
+            color: #9b9b9b;
+        }
+
+        .car_img {
+            float: left;
+            height: 60px;
+            line-height: 100px;
+            border: solid 1px #dddddd;
+            margin: 10px;
+        }
+
+        .all_choose {
+            border-top: solid 1px #dddddd;
+            border-bottom: solid 1px #dddddd;
+            line-height: 48px;
+            height: 48px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: bolder;
+        }
+
+        .input_quanxuan {
+            float: left;
+            margin-left: 53px;
+        }
+
+        .shangpin_num {
+            float: right;
+            margin-right: 30px;
+            font-weight: bolder;
+            /*font-size: 15px;*/
+        }
+
+        .money {
+            height: 38px;
+            line-height: 38px;
+            background-color: #f7f7f7;
+            font-size: 15px;
+        }
+
+        .money a {
+            font-size: 15px;
+        }
+
+        .padd_5 {
+            border-top: solid 1px #e2e2e2;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bolder;
+        }
+
+        .detail {
+            margin-left: 30px;
+            /*margin-bottom: 20px;*/
+            font-size: 13px;
+            font-weight: 100;
+        }
+
+        .submit_order {
+            border-top: solid 1px #e2e2e2;
+            height: 38px;
+            line-height: 38px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: bolder;
+            background-color: #efefef;
+        }
+
+        .right {
+            float: right;
+            /*width: 300px;*/
+        }
+
+        .left {
+            float: left;
+        }
+
+        .jine {
+            font-size: 19px;
+        }
+
+        .mar {
+            margin: 0 10px;
+        }
+
+        .submit_botton {
+            background-color: #e2393c;
+            color: white;;
+            height: 37px;
+            line-height: 37px;
+            width: 120px;
+        }
+
+        .wenzi {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="navigation">
+        <div class="collect">
+            *收藏本站
+        </div>
+        <div class="menu_list">
+            <div class="menu">登录</div>
+            <div class="menu">免费注册</div>
+            <div class="menu">我的订单</div>
+            <div class="menu">我的收藏</div>
+            <div class="menu">VIP会员俱乐部</div>
+            <div class="menu">客户服务
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </div>
+            <div class="menu">关注</div>
+            <div class="menu">手机版</div>
+            <div style="clear: both"></div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+</div>
+<div class="logo_header">
+    <div class="logo">
+        <img src="images/banner.png">
+    </div>
+    <div class="schedule_logo">
+        <img src="images/schedule.png" alt="">
+    </div>
+    <div style="clear: both"></div>
+</div>
+<div class="gouwuche">我的购物车</div>
+<div class="main">
+    <div class="main_header">
+        <div class="jiage">全选</div>
+        <div class="product_banner">商品</div>
+        <div class="jiage">价格</div>
+        <div class="jiage">状态</div>
+        <div class="shuliang">数量</div>
+        <div class="jiage">操作</div>
+        <div style="clear:both;"></div>
+    </div>
+    <div class="product_list">
+        <div class="product_list_line">
+            <div class="jiage">
+                <input type="checkbox">
+            </div>
+            <div class="product_img">
+                <div class="car_img">
+                    <img src="images/qx70_small.png" alt="">
+                </div>
+                <div class="product_info">
+                    <a href="#">英菲尼迪QX70 <br>先锋跑车型SUV</a>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="jiage font_red_bolder">¥77.8万</div>
+            <div class="jiage font_color">有货</div>
+            <div class="shuliang">1</div>
+            <div class="jiage">
+                <a href="#">删除</a>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div class="product_list_line">
+            <div class="jiage">
+                <input type="checkbox">
+            </div>
+            <div class="product_img">
+                <div class="car_img">
+                    <img src="images/qx80_small.png" alt="">
+                </div>
+                <div class="product_info">
+                    <a href="#">2016英菲尼迪QX80 <br>全尺寸SUV <br>陆上奢华专机</a>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="jiage font_red_bolder">¥119.8万</div>
+            <div class="jiage font_color">有货</div>
+            <div class="shuliang">2</div>
+            <div class="jiage">
+                <a href="#">删除</a>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    <div class="all_choose">
+        <div class="input_quanxuan">
+            <input type="checkbox">全选
+        </div>
+        <div class="input_quanxuan">
+            <i class="fa fa-times" aria-hidden="true"></i>
+            删除选中商品
+        </div>
+        <div class="shangpin_num">
+            <a href="#" style="color: red ; font-size: 15px">3 </a>件商品
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    <div class="money ">
+        <div class="shangpin_num">
+            小计: <a href="#" style="color: red">¥317.4万</a>
+        </div>
+    </div>
+    <div class="address padd_5">
+        收货人信息
+        <div class="detail">
+            留P 181xxxx5014
+            <br>北京 沙河市 城区 南七环北路888号 天上人间
+        </div>
+    </div>
+    <div class="pay padd_5">
+        支付方式
+        <div class="detail">
+            人到付款
+        </div>
+    </div>
+    <div class="express padd_5">
+        配送和预约
+        <div class="detail">
+            送货费劲,自己来开.
+        </div>
+    </div>
+    <div class="submit_order">
+        <div class="right">
+            <div class="wenzi left mar">应付总额:</div>
+            <div class="jine left font_red_bolder mar">¥317.4万</div>
+            <div class="wenzi left ">元</div>
+            <div class="submit_botton left">
+                提交订单
+            </div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+</body>
+</html>
