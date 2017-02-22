@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="welcome">
+    我爱O(∩_∩)O哈哈
+
+
+</div>
+<div id="clock">
+    dddd
+</div>
+</body>
+<script>
+    //    function gun() {
+    //        var mywel = document.getElementById("welcome");
+    //        var text = mywel.innerText;
+    //        var f_content = text.charAt(0);
+    //        var l_content = text.substring(1,text.length);
+    //        var new_content = l_content + f_content;
+    //        console.log(new_content)
+    //        mywel.innerText = new_content;
+    //    }
+    //    setInterval(gun,500);
+    //    var list = ['zhangsan','lisi','wangwu','zhuliu']
+    //    var list_length = list.length
+    //    console.log(list_length)
+    function clock() {
+        var mydate = new Date()
+        var year = mydate.getFullYear()
+        var month = mydate.getMonth()
+        var days = mydate.getDate()
+
+        var hour = mydate.getHours()
+        var minute = mydate.getMinutes()
+        var sec = mydate.getSeconds()
+
+//        var dates = []
+//        var times=[]
+//        dates.push(year,month,days)
+//        times.push(hour,minute,sec)
+//        var new_date = dates.join("-")
+//
+//        var new_time = times.join(":")
+//        console.log(new_date)
+//        var all_time = new_date + " " + new_time
+        var all_time = year + "-" + month + "-" + days + " " + hour + ":" + minute + ":" + sec
+        var myclock = document.getElementById("clock")
+//        console.log(all_time)
+        myclock.innerText = all_time
+    }
+    setInterval("clock()", 1000)
+
+</script>
+</html>
