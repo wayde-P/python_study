@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-family: "Microsoft Yahei";
+}
+
+a {
+    text-decoration: none;
+    color: #343b3b;
+}
+
+.f_left {
+    float: left;
+}
+
+.f_right {
+    float: right;
+}
+
+.pg_header {
+    height: 48px;
+    background-color: #ffffff;
+    /*position: absolute;*/
+}
+
+.main {
+    /*position: absolute;*/
+    /*z-index: 1;*/
+}
+
+.main .left {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    bottom: 0;
+    width: 15%;
+    padding-top: 10px;
+    /*height: 500px;*/
+    background-color: #fbfbfb;
+}
+
+.main .right {
+    position: absolute;
+    top: 48px;
+    right: 0;
+    bottom: 0;
+    background-color: #eaeaea;
+    width: 85%;
+    overflow: auto;
+    z-index: 1;
+}
+
+.pg_header .logo {
+    /*position: absolute;*/
+    width: 15%;
+    padding: 5px 0;
+    /*line-height: 48px;*/
+    text-align: center;
+    /*color: white;*/
+    /*border: 1px solid rebeccapurple;*/
+}
+
+.pg_header .header_function {
+    /*position: absolute;*/
+    width: 65px;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    margin: 4px;
+    border-radius: 5px;
+}
+
+.pg_header .header_function:hover {
+    background-color: #188eae;
+    font-size: 20px;
+    /*color: #f9a715;*/
+}
+
+.pg_header .header_function a:hover {
+    color: #f9a715;
+}
+
+/*.pg_header .header_function .hide_infomation .infomation_menu{*/
+.infomation_menu {
+    width: 100px;
+    font-size: 14px;
+    color: black;
+    height: 30px;
+    line-height: 30px;
+    /*border:1px solid hotpink;*/
+}
+
+.pg_header .header_function .hide_infomation {
+    display: none;
+    /*border: 1px solid rebeccapurple;*/
+    background-color: #188eae;
+    border-radius: 5px;
+}
+
+.pg_header .header_function .hide_infomation .infomation_menu a:hover {
+    color: #7abd54;
+}
+
+.pg_header .infomation:hover .hide_infomation {
+    position: absolute;
+    top: 48px;
+    /*left: 50px;*/
+    display: block;
+    z-index: 2;
+}
+
+.pg_header .warning:hover .hide_infomation {
+    position: absolute;
+    top: 48px;
+    /*left: 50px;*/
+    display: block;
+    z-index: 2;
+}
+
+.pg_header .task:hover .hide_infomation {
+    position: absolute;
+    top: 48px;
+    /*left: 50px;*/
+    display: block;
+    z-index: 2;
+}
+
+.pg_header .user_info {
+    width: 100px;
+    height: 48px;
+}
+
+.pg_header .user_info img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+
+.pg_header .user_info .info_list {
+    display: none;
+    position: absolute;
+    right: 40px;
+    top: 50px;
+    border-radius: 5px;
+    /*border:1px solid saddlebrown;*/
+    width: 100px;
+    text-align: center;
+    background-color: #fbfbfb;
+    /*z-index: 15;*/
+}
+
+.pg_header .user_info:hover .info_list {
+    display: block;
+    z-index: 2;
+    /*position: absolute;*/
+    /*width: 120px;*/
+}
+
+.pg_header .user_info .info_list .info_menu {
+    margin: 12px 0;
+}
+
+.pg_header .user_info .info_list .info_menu a {
+    /*text-decoration: none;*/
+    height: 30px;
+    /*color: #ffffff;*/
+}
+
+.pg_header .user_info .info_list .info_menu a:hover {
+    color: #d66f63;
+}
+
+.main .left .left_menu {
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.main .left .left_menu:hover {
+    background-color: #d66f63;
+}
+
+.main .left .left_menu:active {
+    background-color: #c83f2f;
+}
