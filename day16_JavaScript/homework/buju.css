@@ -173,8 +173,9 @@ a {
 }
 
 .main .left .left_menu {
+    padding-left: 20px;
     height: 50px;
-    text-align: center;
+    text-align: left;
     line-height: 50px;
 }
 
