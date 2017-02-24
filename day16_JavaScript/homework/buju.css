@@ -230,8 +230,9 @@ a {
     margin-top: 20px;
 }
 
-.inpu {
-
+.inpu .inpu_info {
+    text-align: center;
+    margin: 20px auto;
 }
 
 .zhezhao {
