@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<script src="jquery-3.1.1.js"></script>-->
+    <title>Title</title>
+</head>
+<body>
+<div id="clock">
+
+</div>
+</body>
+<script>
+    function clock() {
+        var mydate = new Date();
+//    console.log();
+        var myyear = mydate.getFullYear();
+        var mymonth = mydate.getMonth() + 1;
+        var myday = mydate.getDate();
+
+        var myhour = mydate.getHours();
+        var myminuts = mydate.getMinutes();
+        var mysec = mydate.getSeconds();
+
+        var res = myyear + "-" + mymonth + "-" + myday + " " + myhour + ":" + myminuts + ":" + mysec;
+//        console.log(res);
+        var mycolck = document.getElementById("clock");
+        mycolck.innerText = res;
+
+    }
+
+    setInterval("clock();", 1000);
+
+</script>
+</html>

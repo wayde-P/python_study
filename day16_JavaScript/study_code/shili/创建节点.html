@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.1.1.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div id="myinput">
+
+</div>
+
+</body>
+<script>
+    var myinput = document.getElementById("myinput");
+    //    var tag = "<input type='text' />";
+    //    myinput.insertAdjacentHTML('beforeEnd',tag);
+    var myipt = document.createElement("input"); // <input type="">
+    myipt.setAttribute("type", "button");
+    myipt.setAttribute("value", "点击");
+    myinput.appendChild(myipt);
+
+</script>
+</html>

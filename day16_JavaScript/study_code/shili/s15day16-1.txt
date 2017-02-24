@@ -1,0 +1,331 @@
+CSS的基本概念
+        层叠样式表
+        
+    CSS样式表
+css的书写的方式：
+    1.行内样式
+        <div style="color:yellow">dsadsa</div>
+    
+    2.内部样式
+        head标签之内：
+        <style>
+            div{
+                color:yellow;
+            }
+        </style>
+        
+        <div style="color:yellow">dsadsa</div>
+        
+        选择器：
+            1.标签选择器：
+                div{
+                    color:red;
+                }
+            2.id选择器
+                #id{
+                    font-size:12px;
+                }
+            
+            3.类别选择器：
+                .class{
+                    color:red;
+                
+                }
+            4.包含选择器
+            
+                <div>
+                    <span></span>
+                </div>
+                div span{
+                    color:red;
+                }
+            5.分组选择器：
+                div, span{
+                    color:red;
+                }
+            6.* -- 通用选择器
+            
+                *{
+                    color:red;
+                }
+            7.伪类选择器
+                a:hover{
+                    color:red;
+                }
+                a:active{
+                    color:red;
+                }
+                a:visited{
+                    color:red;
+                }
+                a:link{
+                    color:red;
+                }
+                
+        3.外部样式
+            <link href="a.css" />
+ 
+    css文字段落基本属性：
+        1.height：设置div的高度
+        2.width：设置宽度
+        
+        3.<div>123</div>
+        line-height：设置行高
+        4.text-align：left right center
+        
+        5.border：1px  solid red;
+        
+    css的背景：
+        background：
+            1.background-color:red;
+             backgroun-img:url("1.jpg");
+             backgroun-repeat-x:
+             backgroun-repeat-y:
+             
+            2.backgroun-position-x:
+            3.backgroun-position-y:
+        
+    css的布局：
+        
+        float：left； right；
+        清除浮动：
+            <div style="clear:both"></div>
+
+    css的盒子模型：
+        margin：设置外边距
+        padding:设置内边距
+    
+    position：
+        1.fixed
+            top right left bottom
+            
+        2.relative
+        3.absolute
+            定位方式：如果父级有定位方式  则以父级定位  如果没有  则以body定位
+   
+    z-index：
+        10
+        
+     ie6的bug：
+        出现的一些bug
+        
+     opcatiy
+     
+发展历史：
+    1.table
+    2.table + css
+    3.div + css
+    
+    
+  js:
+  js简介：
+    1.JavaScript 被设计用来向 HTML 页面添加交互行为。 
+    2.JavaScript 是一种脚本语言（脚本语言是一种轻量级的编程语言）。 
+    
+    4.JavaScript 通常被直接嵌入 HTML 页面。 
+    5.JavaScript 是一种解释性语言（就是说，代码执行不进行预编译）
+   
+  浏览器---解释器：
+    1.html解释器
+    2.css解释器
+    3.js解释器
+    
+  js的书写方式：
+    1.<!--js的第一种书写方式-->
+    <script>
+        alert('dsadsads');
+    </script>
+    
+    2.js的第二种书写方式
+    <script src="a.js"></script>
+    
+    3.注释方式
+        3.1 单行注释
+            //我是单行注释
+        3.2 多行注释
+            /**/
+    4.变量
+        python：
+            name = “alex”
+        js：
+            4.1: 局部变量
+                var name = "alex";
+                	(1).变量对大小写敏感（y 和 Y 是两个不同的变量） 
+                    (2).第一个字符必须是字母、下划线（_）或美元符号（$）
+                    (3).余下的字符可以是下划线、美元符号或任何字母或数字字符 
+ 
+                    注释：由于 JavaScript 对大小写敏感，变量名也对大小写敏感。
+                    
+            4.2  全局变量
+                name = "alex";
+                
+     5.数据类型：
+        
+        5.1数字
+            var num = 10;
+            var num = 10.2;
+            var num = 10.;
+            var num = .1;
+            
+            var num = "1234dsadsa";
+            parseInt(num); // 1234
+            parseFloat();
+            
+        5.2字符串 
+            var str = "alex is sb";
+            console.log(str);
+            
+        5.3列表（数组）
+            var arrname = [元素0,元素1,….];
+
+            循环：
+               var arr = ['zahngsan','lisi','taoge','hailong'];
+               
+               python：
+                    for i in arr:
+                        print(i)
+               
+               js:
+                   
+                    
+                    第一种循环方式：
+                        var arr = ['zahngsan','lisi','taoge','hailong'];
+                        
+                        for(var i=0; i<arr.length; i = i+1){
+                            console.log('dsadsadsa');
+                        }
+                        
+                    第二种方式：
+                        var dict = {"name":"lisi","age":'23'};
+                        
+                        for(var i in arr){
+                            console.log(arr[i]);
+                        }
+                        
+                        
+        5.4字典(json)
+            var dict = {"name":"lisi","age":'23'};
+              
+        5.6 bool
+            true or false
+            
+        5.7 function
+        
+   6.基本的运算符：
+        算术运算符：
+            +   -    *    /     %       ++        -- 
+         ++：
+            var num = 1;
+            num++; // num = num + 1;
+            
+         
+        比较运算符：
+            >   >=   <    <=
+            
+            全等 和 相等
+            !=    ==    ===   !==
+
+        逻辑运算符：
+             &&   ||   ！
+
+        赋值运算符：
+            =  +=   -=  *=   /=
+
+        
+        字符串运算符：	
+            +  连接，两边操作数有一个或两个是字符串就做连接运算
+
+    7.流程控制：
+    
+        1.顺序结构
+               console.log("吃饭");
+               console.log("睡觉");
+               console.log("打豆豆");
+               
+        2.分支结构
+              2.1 单分支结构
+               if(表达式){
+                    
+               }
+              2.1 双分支
+                if(){
+                
+                }eles{
+                
+                }
+                
+              2.2 多路分支
+                if(){
+                }else if(){
+                
+                }else if(){
+                
+                }else{
+                }
+                
+              2.3 switch...case  
+               swicth(){
+                    case :
+                        consoel.log();
+                        break;
+               }
+        3.循环结构
+            
+            先干一次  再说
+            
+            do...while
+            var n = 0;
+            do{
+                console.log('dsdsadsa');
+                n = n + 1
+            }while(n<3);
+        
+        4.函数
+            
+            python ：
+                def test():
+                    console.log("fuck hailong");
+                    
+            js的函数有三种书写方式：
+                1.function test(){
+                    console.log();
+                }
+                
+                2.var test = function(){
+                    console.log('dsadsaj');
+                }
+                
+                test();
+                
+                3.(function(){
+                    consoel.log('dsadsa');
+                })()
+     8.序列化
+            JSON.stringify(obj)   序列化
+            JSON.parse(str)        反序列化
+
+        2、转义
+            decodeURI( )                   URl中未转义的字符
+            decodeURIComponent( )   URI组件中的未转义字符
+            encodeURI( )                   URI中的转义字符
+            encodeURIComponent( )   转义URI组件中的字符
+            URIError                         由URl的编码和解码方法抛出
+  DOM
+    1.直接查找：
+        document.getElementById(“idname”) 
+        document.getElementsByTagName(“tagname”)
+        document.getElementsByName(“name”)
+        document.getElementsByClassName(“name”)
+        
+    2.间接查找
+        parentElement           // 父节点标签元素
+        children                	     // 所有子标签
+        firstElementChild        // 第一个子标签元素
+        lastElementChild        // 最后一个子标签元素
+        nextElementtSibling     // 下一个兄弟标签元素
+        previousElementSibling  // 上一个兄弟标签元素
+
+
+            
+         
+        

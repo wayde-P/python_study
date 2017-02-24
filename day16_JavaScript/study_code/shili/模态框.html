@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.1.1.js"></script>
+    <title>Title</title>
+    <style>
+        .one {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: black;
+            opacity: 0.6;
+
+        }
+
+        .info {
+            width: 400px;
+            height: 300px;
+            position: fixed;
+            top: 50px;
+            left: 400px;
+            right: 400px;
+            background-color: white;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <input type="button" value="点击" onclick="showModel();"/>
+</div>
+<!--遮罩层-->
+<div class="one hide"></div>
+
+<div class="info hide">
+    <p>
+        <input type="text"/>
+    <p></p>
+    <input type="text"/>
+    <p></p>
+    <input type="button" value="取消" onclick="hideModel();">
+    <input type="button" value="确定">
+    </p>
+</div>
+</body>
+<script>
+    function showModel() {
+        var myone = document.getElementsByClassName("one")[0];
+        var info = document.getElementsByClassName("info")[0];
+//        console.log(myone);
+        myone.classList.remove('hide');
+        info.classList.remove('hide');
+    }
+    function hideModel() {
+        var myone = document.getElementsByClassName("one")[0];
+        var info = document.getElementsByClassName("info")[0];
+
+        myone.classList.add('hide');
+        info.classList.add('hide');
+    }
+</script>
+</html>

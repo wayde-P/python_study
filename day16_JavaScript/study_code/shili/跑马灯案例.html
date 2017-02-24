@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<script src="jquery-3.1.1.js"></script>-->
+    <title>Title</title>
+</head>
+<body>
+<!--<marquee behavior="" direction="right">Alex is sb</marquee>-->
+<!--<div id="wel">-->
+<!--欢迎光临-->
+<!--</div>-->
+
+</body>
+<script>
+
+    function test() {
+        var mywel = document.getElementById("wel");
+        var content = mywel.innerText;
+
+        var f_content = content.charAt(0);
+        var l_content = content.substring(1, content.length);
+
+        var new_content = l_content + f_content;
+        mywel.innerText = new_content;
+    }
+    //    console.log(new_content);
+    //    setInterval("test();", 500);
+</script>
+</html>
