@@ -9,10 +9,14 @@
 <body>
 <div class="pg_header">
     <div class="logo f_left">
-        <a href="#"><img src="images/logo.gif" alt=""></a>
+        <a href="#"><img src="images/banner.png" alt=""></a>
+        <!--<a href="#">大logo</a>-->
     </div>
     <div class="header_function infomation f_left">
-        <a href="#">信息</a>
+        <a href="#">
+            <i class="fa fa-commenting-o" aria-hidden="true"></i>
+            信息
+        </a>
         <div class="hide_infomation">
             <div class="infomation_menu">
                 <a href="#">新信息</a>
@@ -29,7 +33,10 @@
         </div>
     </div>
     <div class="header_function warning f_left">
-        <a href="#">报警</a>
+        <a href="#">
+            <i class="fa fa-ambulance" aria-hidden="true"></i>
+            报警
+        </a>
         <div class="hide_infomation">
             <div class="infomation_menu">
                 <a href="#">新报警</a>
@@ -46,7 +53,10 @@
         </div>
     </div>
     <div class="header_function task f_left">
-        <a href="#">任务</a>
+        <a href="#">
+            <i class="fa fa-tasks" aria-hidden="true"></i>
+            任务
+        </a>
         <div class="hide_infomation">
             <div class="infomation_menu">
                 <a href="#">新任务</a>
@@ -63,7 +73,10 @@
         </div>
     </div>
     <div class="user_info f_right">
-        <img src="QX60.png" alt="">
+        <img src="pipixia.jpg" alt="">
+        <div class="mation">
+            皮皮虾
+        </div>
         <div class="info_list">
             <div class="info_menu">
                 <a href="#">我的信息</a>
@@ -127,8 +140,138 @@
 
     </div>
     <div class="right">
+        <div class="server_text">
+            服务器信息
+        </div>
+        <div class="server_info">
+            <div class="server_table">
+                <!--<table width="100%" border="0" cellspacing="1" cellpadding="0">-->
+                <table>
+                    <thead>
+                    <tr>
+                        <td>选择</td>
+                        <td>序号</td>
+                        <td>主机名</td>
+                        <td>ip地址</td>
+                        <td>操作</td>
+                    </tr>
+                    </thead>
+                    <tbody id="server">
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>alex</td>
+                        <td>192.168.1.1</td>
+                        <td><input type="button" value="删除" onclick="xiaoshi()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>2</td>
+                        <td>alex</td>
+                        <td>192.168.1.2</td>
+                        <td><input type="button" value="删除" onclick="xiaoshi()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>3</td>
+                        <td>alex</td>
+                        <td>192.168.1.3</td>
+                        <td><input type="button" value="删除" onclick="xiaoshi()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>4</td>
+                        <td>alex</td>
+                        <td>192.168.1.4</td>
+                        <td><input type="button" value="删除" onclick="xiaoshi()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>5</td>
+                        <td>alex</td>
+                        <td>192.168.1.5</td>
+                        <td><input type="button" value="删除" onclick="xiaoshi()"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="select">
+                    <input type="button" value="全选" onclick="selectAll()">
+                    <input type="button" value="取消全部" onclick="cancelAll()">
+                    <input type="button" value="反选" onclick="reverseAll()">
+                </div>
+            </div>
+        </div>
+    </div>
 
+</div>
+<div class="zhezhao hide">
+</div>
+<div class="motai hide">
+    <div class="inpu">
+        <p>用户名: <input type="text"></p>
+        <p>密码: <input type="text"></p>
+        <p><input type="button" value="确定"></p>
+        <input type="button" value="取消" onclick="cancel()">
     </div>
 </div>
 </body>
+<script>
+    function selectAll() {
+        var get_table = document.getElementById("server");
+        var table_inputs = get_table.children;
+        console.log(table_inputs);
+//        console.log(table_inputs.length)
+
+        for (var i = 0; i < table_inputs.length; i++) {
+            var my_input = table_inputs[i].children[0].children[0];
+            console.log(i);
+            console.log(my_input);
+            my_input.checked = true;
+        }
+    }
+    function cancelAll() {
+        var get_table = document.getElementById("server");
+        var table_inputs = get_table.children;
+        console.log(table_inputs);
+//        console.log(table_inputs.length)
+
+        for (var i = 0; i < table_inputs.length; i++) {
+            var my_input = table_inputs[i].children[0].children[0];
+            console.log(i);
+            console.log(my_input);
+            my_input.checked = false;
+        }
+    }
+    function reverseAll() {
+        var get_table = document.getElementById("server");
+        var table_inputs = get_table.children;
+        console.log(table_inputs);
+//        console.log(table_inputs.length)
+
+        for (var i = 0; i < table_inputs.length; i++) {
+            var my_input = table_inputs[i].children[0].children[0];
+            console.log(i);
+            console.log(my_input.checked);
+            if (my_input.checked) {
+                my_input.checked = false;
+            } else {
+                my_input.checked = true;
+            }
+        }
+    }
+    function xiaoshi() {
+        var zhezhao = document.getElementsByClassName("zhezhao")[0]
+        var motai = document.getElementsByClassName("motai")[0]
+//        console.log(zhezhao,motai)
+        zhezhao.classList.remove("hide")
+        motai.classList.remove("hide")
+    }
+    function cancel() {
+        var zhezhao = document.getElementsByClassName("zhezhao")[0]
+        var motai = document.getElementsByClassName("motai")[0]
+//        console.log(zhezhao,motai)
+        zhezhao.classList.add("hide")
+        motai.classList.add("hide")
+    }
+</script>
 </html>

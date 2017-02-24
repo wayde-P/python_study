@@ -21,7 +21,7 @@ a {
 
 .pg_header {
     height: 48px;
-    background-color: #ffffff;
+    background-color: #f9a715;
     /*position: absolute;*/
 }
 
@@ -46,17 +46,19 @@ a {
     top: 48px;
     right: 0;
     bottom: 0;
-    background-color: #eaeaea;
+    background-color: #f8f8f8;
     width: 85%;
     overflow: auto;
     z-index: 1;
+    padding: 15px;
 }
 
 .pg_header .logo {
     /*position: absolute;*/
     width: 15%;
-    padding: 5px 0;
-    /*line-height: 48px;*/
+    padding: 2px 0;
+    font-size: 20px;
+    line-height: 48px;
     text-align: center;
     /*color: white;*/
     /*border: 1px solid rebeccapurple;*/
@@ -64,7 +66,7 @@ a {
 
 .pg_header .header_function {
     /*position: absolute;*/
-    width: 65px;
+    width: 80px;
     text-align: center;
     line-height: 40px;
     height: 40px;
@@ -128,17 +130,26 @@ a {
 }
 
 .pg_header .user_info {
-    width: 100px;
+    width: 140px;
     height: 48px;
+    text-align: left;
+    line-height: 48px;
+    /*border: 1px solid rebeccapurple;*/
+}
+
+.pg_header .user_info .mation {
+    font-weight: bold;
+    text-align: center;
 }
 
 .pg_header .user_info img {
-    width: 42px;
-    height: 42px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
+    float: left;
 }
 
-.pg_header .user_info .info_list {
+.pg_header .info_list {
     display: none;
     position: absolute;
     right: 40px;
@@ -147,8 +158,8 @@ a {
     /*border:1px solid saddlebrown;*/
     width: 100px;
     text-align: center;
-    background-color: #fbfbfb;
-    /*z-index: 15;*/
+    background-color: #188eae;
+    z-index: 15;
 }
 
 .pg_header .user_info:hover .info_list {
@@ -159,12 +170,15 @@ a {
 }
 
 .pg_header .user_info .info_list .info_menu {
-    margin: 12px 0;
+    margin: 5px 0;
+    height: 30px;
+    line-height: 30px;
+    /*border: 1px solid darkred;*/
 }
 
 .pg_header .user_info .info_list .info_menu a {
     /*text-decoration: none;*/
-    height: 30px;
+    /*height: 10px;*/
     /*color: #ffffff;*/
 }
 
@@ -177,6 +191,7 @@ a {
     height: 50px;
     text-align: left;
     line-height: 50px;
+    /*color: #000000;*/
 }
 
 .main .left .left_menu:hover {
@@ -185,4 +200,65 @@ a {
 
 .main .left .left_menu:active {
     background-color: #c83f2f;
+}
+
+.right .server_text {
+    height: 45px;
+    line-height: 45px;
+    font-size: 18px;
+    font-weight: bolder;
+    color: #000000;;
+    /*border:1px solid salmon;*/
+}
+
+.right .server_table table {
+    width: 100%;
+}
+
+.right .server_table table td {
+    /*border: 1px solid darkblue;*/
+    background-color: #ffffff;
+    /*padding: 2em;*/
+    padding-left: 20px;
+    text-align: left;
+    margin-top: 2em;
+    height: 38px;
+    width: 5px;
+}
+
+.right .select {
+    margin-top: 20px;
+}
+
+.inpu {
+
+}
+
+.zhezhao {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    z-index: 100;
+    /*display: none;*/
+    opacity: 0.8;
+}
+
+.hide {
+    display: none;
+}
+
+.motai {
+    width: 30%;
+    height: 200px;
+    position: fixed;
+    top: 20%;
+    /*bottom: 20%;*/
+    left: 40%;
+    right: 40%;
+    background-color: white;
+    z-index: 101;
+    padding: 20px;
 }
