@@ -142,6 +142,10 @@
     <div class="right">
         <div class="server_text">
             服务器信息
+            <div class="server_add">
+                <!--<i class="fa fa-plus-square-o" aria-hidden="true"></i>-->
+                <input type="button" value="添加服务器" onclick="xianshi_add()">
+            </div>
         </div>
         <div class="server_info">
             <div class="server_table">
@@ -202,19 +206,27 @@
             </div>
         </div>
     </div>
-
 </div>
 <div class="zhezhao hide">
 </div>
-<div class="motai hide">
+<div class="motai_add hide">
     <div class="inpu">
-        <div class="inpu_info">用户名: <input type="text"></div>
-        <div class="inpu_info">密码: <input type="text"></div>
+        <div class="inpu_info">主机名: <input type="text"></div>
+        <div class="inpu_info">IP地址: <input type="text"></div>
         <div class="inpu_info">
             <input type="button" value="确定">
             <input type="button" value="取消" onclick="cancel()">
         </div>
     </div>
+</div>
+<div class="xiaoshi hide">
+    <div class="tishi">
+        <i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true"></i>
+        确认要删除吗?
+    </div>
+
+    <button class="ok">确认</button>
+    <button class="cancel" onclick="recover()">取消</button>
 </div>
 </body>
 <script>
@@ -261,17 +273,29 @@
             }
         }
     }
-    function xiaoshi() {
+    function xianshi_add() {
         var zhezhao = document.getElementsByClassName("zhezhao")[0]
-        var motai = document.getElementsByClassName("motai")[0]
+        var motai = document.getElementsByClassName("motai_add")[0]
 //        console.log(zhezhao,motai)
         zhezhao.classList.remove("hide")
         motai.classList.remove("hide")
     }
     function cancel() {
         var zhezhao = document.getElementsByClassName("zhezhao")[0]
-        var motai = document.getElementsByClassName("motai")[0]
+        var motai = document.getElementsByClassName("motai_add")[0]
 //        console.log(zhezhao,motai)
+        zhezhao.classList.add("hide")
+        motai.classList.add("hide")
+    }
+    function xiaoshi() {
+        var zhezhao = document.getElementsByClassName("zhezhao")[0]
+        var motai = document.getElementsByClassName("xiaoshi")[0]
+        zhezhao.classList.remove("hide")
+        motai.classList.remove("hide")
+    }
+    function recover() {
+        var zhezhao = document.getElementsByClassName("zhezhao")[0]
+        var motai = document.getElementsByClassName("xiaoshi")[0]
         zhezhao.classList.add("hide")
         motai.classList.add("hide")
     }
