@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.1.1.js"></script>
+    <title>Title</title>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+<a onclick="deng();">开关灯</a>
+<div id="i2">
+    asdfasdfasdfasdf
+</div>
+
+
+<a onclick="checkAll()">全选</a>
+<a onclick="checkCancle()">取消</a>
+<a onclick="checkReverse()">取消</a>
+<table border="1">
+    <tr>
+        <td><input type="checkbox"/></td>
+        <td target="#id">1</td>
+        <td target="#host">c1.com</td>
+        <td target="#port">80</td>
+        <td><a onclick="editAsset(this);">编辑</a>| <a>删除</a></td>
+        <td>查看更多</td>
+
+    </tr>
+    <tr>
+        <td><input type="checkbox"/></td>
+        <td target="#id">2</td>
+        <td target="#host">c2.com</td>
+        <td target="#port">80</td>
+        <td><a onclick="editAsset(this);">编辑</a>| <a>删除</a></td>
+        <td>查看更多</td>
+
+    </tr>
+    <tr>
+        <td><input type="checkbox"/></td>
+        <td target="#id">3</td>
+        <td target="#host">c3.com</td>
+        <td target="#port">80</td>
+        <td><a onclick="editAsset(this);">编辑</a>| <a>删除</a></td>
+        <td>查看更多</td>
+
+    </tr>
+    <tr>
+        <td><input type="checkbox"/></td>
+        <td target="#id">4</td>
+        <td target="#host">c4.com</td>
+        <td target="#port">80</td>
+        <td><a onclick="editAsset(this);">编辑</a>| <a>删除</a></td>
+        <td>查看更多</td>
+
+    </tr>
+</table>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    function deng() {
+        $('#i2').toggleClass('hide');
+    }
+    function checkAll() {
+        $('table :checkbox').prop('checked', true);
+    }
+    function checkCancle() {
+        $('table :checkbox').prop('checked', false);
+    }
+    function checkReverse() {
+        $('table :checkbox').each(function () {
+            if ($(this).prop('checked')) {
+                $(this).prop('checked', false);
+            } else {
+                $(this).prop('checked', true);
+            }
+        })
+    }
+</script>
+</body>
+</html>

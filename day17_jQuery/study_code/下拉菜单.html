@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .pg-header {
+            height: 48px;
+            background-color: black;
+        }
+
+        .pg-body .menu {
+            width: 20%;
+            float: left;
+            background-color: #d3d3d3;
+            height: 800px;
+        }
+
+        .pg-body .test {
+            width: 80%;
+            float: left;
+        }
+
+        .menu .item .title {
+            background-color: #297EA8;
+            color: white;
+            height: 40px;
+        }
+
+        .menu .item {
+            display: block;
+        }
+
+        .menu .item .content {
+            background-color: white;
+        }
+
+        .menu .item .content a {
+            display: block;
+            padding: 10px;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="i1" class="pg-header"></div>
+<div class="pg-body">
+    <div class="menu">
+        <div class="item">
+            <div class="title" onclick="changeMenu(this);">菜单1</div>
+            <div class="content">
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title" onclick="changeMenu(this);">菜单2</div>
+            <div class="content hide">
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title" onclick="changeMenu(this);">菜单3</div>
+            <div class="content hide">
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title" onclick="changeMenu(this);">菜单4</div>
+            <div class="content hide">
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="test"></div>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    function changeMenu(thd) {
+        $(thd).next().removeClass('hide');
+        $(thd).parent().siblings().find('.content').addClass('hide')
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<input type="text" id="inp"/><a onclick="addEle();">添加</a>
+<ul id="u1">
+
+    <li>内容一</li>
+</ul>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    function addEle() {
+        var v = $('#inp').val();
+        var tag = document.createElement('li');
+        tag.innerHTML = v;
+        // $('#u1').append(tag);
+        // $('#u1').after(tag);
+        // $('#u1').prepend(tag);
+        // $(tag).appendTo($('#u1'));
+    }
+</script>
+
+</body>
+</html>

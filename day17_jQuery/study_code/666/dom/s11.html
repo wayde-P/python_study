@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.1.1.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<input type="text" onkeydown="func(this,event);"/>
+
+<script>
+    function func(ths, e) {
+        console.log(ths, e);
+    }
+    window.onkeydown = function (e) {
+        console.log(e);
+    }
+
+</script>
+</body>
+</html>

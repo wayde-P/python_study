@@ -1,0 +1,163 @@
+概要：
+    1. HTML+CSS补充
+        - 布局：
+                <style>
+                    .w{
+                        width:980px;margin:0 auto;
+                    }
+                </style>
+                <body>
+                    <div style='background-color:red;'>
+                        <div class='w'>dsfg</div>
+                    </div>
+                </body>
+        - 清除浮动
+                .clearfix:after{
+                    content: '.';
+                    display: block;
+                    clear: both;
+                    visibility: hidden;
+                    height: 0;
+                }
+        - 响应式布局 @media
+    2. DOM事件
+         - 如何绑定事件（2）
+         - 如何阻止默认事件的发生（2）
+         - this表示当前触发事件的标签
+         - 一个标签可以绑定多个不同的事件
+         - 绑定多个相同的事件
+             document.getElementById('i1').addEventListener('click',function () {
+                console.log(2);
+            })
+         - 事件执行顺序：
+                - 捕获 true
+                - 冒泡
+                document.getElementById('i1').addEventListener('click',函数,true或者false)
+         - event是当前事件的信息
+            
+         
+        补充：
+            - 任何标签均可以提交表单 document.getElementById('f1').submit();
+            - 
+                window.location.href   获取当前url
+                window.location.href = "http://www.baidu.com"   跳转
+                window.location.reload() 重新加载当前页面
+         
+        
+         
+    3. jQuery（示例）
+        目标：写更少的代码完成跟牛逼的功能
+    
+        jQuery      
+        highchart
+        -- 
+        
+        插件：
+            开发： xxxx.js
+            线上： xxxx.min.js
+
+        版本：
+            1.x             1.12.x
+            2.x
+            3.x
+        
+        jQuery：
+            - 查找
+                - 选择器
+                    $('#i1')    -> 找id=i1的标签
+                    $('.i1')    -> 找class=i1的标签
+                    $('div')    -> 找所有div标签
+                    $('#i1 .c1 div') -> 先找到id=i1标签，在其子子孙孙中找class=c1标签，在上述基础上再进行找div标签
+                    $('#i1>a')                    
+                    $('input[type="text"]') --> $(':text')
+
+                    索引等于
+                    大于小雨
+                    ..
+                - 筛选器
+                    $('#i1').parent()
+                    $('#i1').children(':text')
+                    $('#i1').next()
+                    $('#i1').prev()
+                    $('#i1').prevAll()
+                    $('#i1').siblings()
+                    $('#i1').find('.c1')
+                 链式编程
+                    $('#i1').next().prev().find('.c1').parent()
+                    
+                    $('#i1').prevAll().each(function(){
+                        // this，当前循环的每一个标签 DOM对象
+                        // $(this)
+                    
+                    })
+
+            - 操作
+                - addClass('x')
+                - removeClass('x')
+                - val()
+                    - $('#i1').val()     # 获取值
+                    - $('#i1').val('ff') # 设置
+                    PS:textarea,select
+                - text()
+                    - $('#i1').text()     # 获取值
+                    - $('#i1').text('ff') # 设置
+                    
+                - html()
+                    - $('#i1').html()     # 获取值
+                    - $('#i1').html('ff') # 设置
+                - attr()
+                    - $('#i1').attr('属性名') # 获取值
+                    - $('#i1').attr('属性名','new') # 对属性设置值
+                - prop()
+                    专门对于checkbox，提供的内容
+                    $(':checkbox').attr('checked','checked');
+                    $(':checkbox').prop('checked',true)
+                    $(':checkbox').prop('checked',false)
+                - css
+                - scrollTop
+                   
+                // $('#u1').append(tag);
+                // $('#u1').after(tag);
+                // $('#u1').prepend(tag);
+                // $(tag).appendTo($('#u1'));
+                // $(tag).empty()
+                // $(tag).remove()
+                        
+作业：
+    1.补充上次作业
+        菜单
+        编辑框
+        点赞
+        全选
+        ...
+    2.  编辑框：
+            - 增加，table
+            - 修改
+            - 删除
+        PS:
+            $('.edit').click(function(){
+
+            })
+            $('td').delegate('.edit','click',function(){
+            
+            })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

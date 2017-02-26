@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.1.1.js"></script>
+    <title>Title</title>
+
+</head>
+<body>
+
+<div id="i1" onclick="console.log(1);">鸡建明</div>
+<script>
+    //        document.getElementById('i1').onclick = function () {
+    //            console.log(2);
+    //        }
+    document.getElementById('i1').addEventListener('click', function () {
+        console.log(2);
+    })
+</script>
+</body>
+</html>

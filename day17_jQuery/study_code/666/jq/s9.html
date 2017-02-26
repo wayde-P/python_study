@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>\</title>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div style="height: 900px;">f</div>
+<div style="padding: 10px;position: relative;">
+    <div style="margin: 10px;">
+        <div id="i1">asdf</div>
+    </div>
+</div>
+
+<div onclick="goTop();" style="height: 50px;width: 50px;position: fixed;right: 10px;bottom: 10px;">返回</div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    function goTop() {
+        $(window).scrollTop(0);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.1.1.js"></script>
+    <title>Title</title>
+    <style>
+        .pg-header {
+            height: 48px;
+            background-color: black;
+        }
+
+        .pg-body .menu {
+            width: 20%;
+            float: left;
+            background-color: #d3d3d3;
+            height: 800px;
+        }
+
+        .pg-body .test {
+            width: 80%;
+            float: left;
+        }
+
+        .menu .item .title {
+            background-color: #297EA8;
+            color: white;
+            height: 40px;
+        }
+
+        .menu .item {
+            display: block;
+        }
+
+        .menu .item .content {
+            background-color: white;
+        }
+
+        .menu .item .content a {
+            display: block;
+            padding: 10px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .shade {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: black;
+            opacity: 0.6;
+            z-index: 100;
+        }
+
+        .loading {
+            position: fixed;
+            top: 30%;
+            left: 50%;
+            width: 32px;
+            height: 32px;
+            background: url(loader.gif);
+            z-index: 101;
+        }
+
+        .model {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            z-index: 101;
+            background-color: white;
+            margin-left: -200px;
+            margin-top: -200px;
+        }
+    </style>
+</head>
+<body>
+<div id="i1" class="pg-header"></div>
+<div class="pg-body">
+    <div class="menu">
+        <div class="item">
+            <div class="title" onclick="changeMenu(this);">菜单1</div>
+            <div class="content">
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title" onclick="changeMenu(this);">菜单2</div>
+            <div class="content hide">
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title" onclick="changeMenu(this);">菜单3</div>
+            <div class="content hide">
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title" onclick="changeMenu(this);">菜单4</div>
+            <div class="content hide">
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+                <a>小彩蛋</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="test">
+        <input type="button" value="添加" onclick="addAsset();">
+        <table border="1">
+            <tr>
+                <td target="#id">1</td>
+                <td target="#host">c1.com</td>
+                <td target="#port">80</td>
+                <td><a onclick="editAsset(this);">编辑</a>| <a>删除</a></td>
+                <td>查看更多</td>
+
+            </tr>
+            <tr>
+                <td target="#id">2</td>
+                <td target="#host">c2.com</td>
+                <td target="#port">80</td>
+                <td><a onclick="editAsset(this);">编辑</a>| <a>删除</a></td>
+                <td>查看更多</td>
+
+            </tr>
+            <tr>
+                <td target="#id">3</td>
+                <td target="#host">c3.com</td>
+                <td target="#port">80</td>
+                <td><a onclick="editAsset(this);">编辑</a>| <a>删除</a></td>
+                <td>查看更多</td>
+
+            </tr>
+            <tr>
+                <td target="#id">4</td>
+                <td target="#host">c4.com</td>
+                <td target="#port">80</td>
+                <td><a class='edit'>编辑</a>| <a>删除</a></td>
+                <td>查看更多</td>
+
+            </tr>
+        </table>
+
+
+    </div>
+</div>
+$('.edit').click(function(){
+
+})
+$('td').delegate('.edit','click',function(){
+
+})
+
+<div class="shade hide"></div>
+<div class="model hide">
+    <p>序号：<input id="id" type="text"/></p>
+    <p>主机名：<input id="host" type="text"/></p>
+    <p>端口：<input id="port" type="text"/></p>
+    <p>
+        <a onclick="confirmAsset();">确定</a> <a onclick="cancleAsset();">取消</a>
+    </p>
+
+</div>
+<div class="loading hide"></div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    function changeMenu(ths) {
+        // console.log(ths);
+        // ths--> DOM的对象 代指当前点击的菜单标签(内部封装仅仅只有DOM的方法)
+        // DOM对象转换成jquery对象： $(ths)
+        // jQuery对象转换成DOM对象： $('#i1')[0]
+        // 找到当前ths的下一个标签，去掉hide样式
+        // 找到当前ths的父标签，再找所有的兄弟标签，内存再找class=content，加上hide
+        $(ths).next().removeClass('hide');
+        $(ths).parent().siblings().find('.content').addClass('hide');
+
+    }
+
+    function addAsset() {
+        $('.shade,.model').removeClass('hide');
+    }
+    function cancleAsset() {
+        $('.shade,.model').addClass('hide');
+    }
+    function confirmAsset() {
+        $('.shade,.model').addClass('hide');
+        $('.shade,.loading').removeClass('hide');
+    }
+
+    function editAsset(ths) {
+        // 弹出对话框
+        // 获取当前行数据
+        // 将数据填充到指定对话框的位置
+
+        // 显示对话框
+        $('.shade,.model').removeClass('hide');
+
+        // 获取上面所有的td
+        var $td_list = $(ths).parent().prevAll();
+        // 循环所有的td
+        $td_list.each(function () {
+            // this，当前循环的td（DOM）  $(this)
+            var $td = $(this);
+            // 获取标签内部的文本信息，相当于innerText
+            var text = $td.text();
+            // 获取标签自定义属性的值
+            var v = $td.attr('target'); // #port,   #id,  #host
+            // $(v)获取对应的input标签，
+            // $(v).val('df') 对input系列进行赋值
+            $(v).val(text);
+        })
+    }
+</script>
+</body>
+</html>

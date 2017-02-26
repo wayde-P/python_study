@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .item {
+            height: 80px;
+            line-height: 80px;
+            border: 1px solid red;
+        }
+
+        .item .zan {
+            position: relative;
+        }
+
+        .item .zan i {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div class="item">
+    <div class="zan">
+        <span>赞</span>
+    </div>
+</div>
+<div class="item">
+    <div class="zan">
+        <span>赞</span>
+        <i style="position: absolute">+1</i>
+    </div>
+</div>
+<div class="item">
+    <div class="zan">
+        <span>赞</span>
+    </div>
+</div>
+<div class="item">
+    <div class="zan">
+        <span>赞</span>
+    </div>
+</div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $('.item span').click(function () {
+        var fontSize = 12;
+        var top = -1;
+        var left = 20;
+        var opacity = 1;
+        var tag = document.createElement('i');
+        tag.innerHTML = '+1';
+        $(this).after(tag);
+        var obj = setInterval(function () {
+            fontSize += 10;
+            top -= 5;
+            left += 5;
+            opacity -= 0.2;
+            tag.style.fontSize = fontSize + 'px';
+            tag.style.top = top + 'px';
+            tag.style.left = left + 'px';
+            tag.style.opacity = opacity;
+            if (opacity < 0) {
+                // 关闭定时器
+                clearInterval(obj);
+            }
+        }, 90);
+    })
+
+
+</script>
+</body>
+</html>

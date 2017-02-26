@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>after</title>
+    <style>
+        .main {
+            background-color: #7abd54;
+        }
+
+        .main:after {
+            display: block;
+            content: '.';
+            clear: both;
+            visibility: hidden;
+            height: 0;
+        }
+
+        .a {
+            width: 200px;
+            height: 200px;
+            float: left;
+            border: 1px dashed darkblue;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="a">
+    </div>
+    <div class="a">
+    </div>
+    <div class="a">
+    </div>
+    <div class="a">
+    </div>
+    <div class="a">
+    </div>
+</div>
+</body>
+</html>

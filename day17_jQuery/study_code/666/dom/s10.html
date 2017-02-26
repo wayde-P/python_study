@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.1.1.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<!--<div id="i1" style="height: 400px;width: 400px;background-color: red" onclick="alert(1);">-->
+<!--<div id="i2" style="height: 300px;width: 300px;background-color: green" onclick="alert(2);">-->
+<!--<div id="i3" style="height: 200px;width: 200px;background-color: antiquewhite" onclick="alert(3);"></div>-->
+<!--</div>-->
+<!--</div>-->
+<div id="i1" style="height: 400px;width: 400px;background-color: red">
+    <div id="i2" style="height: 300px;width: 300px;background-color: green">
+        <div id="i3" style="height: 200px;width: 200px;background-color: antiquewhite"></div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('i1').addEventListener('click', function () {
+        alert(1);
+    }, true);
+    document.getElementById('i2').addEventListener('click', function () {
+        alert(2);
+    }, true);
+    document.getElementById('i3').addEventListener('click', function () {
+        alert(3);
+    }, true);
+</script>
+
+</body>
+</html>

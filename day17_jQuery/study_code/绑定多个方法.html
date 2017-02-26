@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" id="user" value="请输入关键字" onfocus="focus(this)" onblur="blur(this)">
+<input type="submit" value="提交">
+<script>
+    function focus(thd) {
+        var v = thd.value;
+        console.log(v)
+        if (v == '请输入关键字') {
+            thd.value = "";
+        }
+    }
+    function blur(thd) {
+        var v = thd.value;
+        if (v.length == 0) {
+            thd.value = "请输入关键字"
+        }
+    }
+</script>
+</body>
+</html>
