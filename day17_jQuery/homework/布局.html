@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="buju.css">
+</head>
+<body>
+<div class="pg_header">
+    <div class="logo f_left">
+        <a href="#"><img src="images/banner.png" alt=""></a>
+        <!--<a href="#">大logo</a>-->
+    </div>
+    <div class="header_function infomation f_left">
+        <a href="#">
+            <i class="fa fa-commenting-o" aria-hidden="true"></i>
+            信息
+        </a>
+        <div class="hide_infomation">
+            <div class="infomation_menu">
+                <a href="#">新信息</a>
+            </div>
+            <div class="infomation_menu">
+                <a href="">未读信息</a>
+            </div>
+            <div class="infomation_menu">
+                <a href="#">已读信息</a>
+            </div>
+            <div class="infomation_menu">
+                <a href="#">已删除信息</a>
+            </div>
+        </div>
+    </div>
+    <div class="header_function warning f_left">
+        <a href="#">
+            <i class="fa fa-ambulance" aria-hidden="true"></i>
+            报警
+        </a>
+        <div class="hide_infomation">
+            <div class="infomation_menu">
+                <a href="#">新报警</a>
+            </div>
+            <div class="infomation_menu">
+                <a href="">未读报警</a>
+            </div>
+            <div class="infomation_menu">
+                <a href="#">已读报警</a>
+            </div>
+            <div class="infomation_menu">
+                <a href="#">已处理报警</a>
+            </div>
+        </div>
+    </div>
+    <div class="header_function task f_left">
+        <a href="#">
+            <i class="fa fa-tasks" aria-hidden="true"></i>
+            任务
+        </a>
+        <div class="hide_infomation">
+            <div class="infomation_menu">
+                <a href="#">新任务</a>
+            </div>
+            <div class="infomation_menu">
+                <a href="">待做任务</a>
+            </div>
+            <div class="infomation_menu">
+                <a href="#">已做任务</a>
+            </div>
+            <div class="infomation_menu">
+                <a href="#">过期任务</a>
+            </div>
+        </div>
+    </div>
+    <div class="user_info f_right">
+        <img src="pipixia.jpg" alt="">
+        <div class="mation">
+            皮皮虾
+        </div>
+        <div class="info_list">
+            <div class="info_menu">
+                <a href="#">我的信息</a>
+            </div>
+            <div class="info_menu">
+                <a href="#">联系客服</a>
+            </div>
+            <div class="info_menu">
+                <a href="#">修改密码</a>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+</div>
+<div class="main">
+    <div class="left">
+        <div class="left_menu">
+            <a href="#">
+                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                Dashboard
+            </a>
+        </div>
+        <div class="left_menu">
+            <a href="#">
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                Layyouts
+            </a>
+        </div>
+        <div class="left_menu">
+            <a href="#">
+                <i class="fa fa-database" aria-hidden="true"></i>
+                Database
+            </a>
+        </div>
+        <div class="left_menu">
+            <a href="#">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                Mailbox</a>
+        </div>
+        <div class="left_menu">
+            <a href="#">
+                <i class="fa fa-wrench" aria-hidden="true"></i>
+                widgets</a>
+        </div>
+        <div class="left_menu">
+            <a href="#">
+                <i class="fa fa-server" aria-hidden="true"></i>
+                Server
+            </a>
+        </div>
+        <div class="left_menu">
+            <a href="#">
+                <i class="fa fa-address-book" aria-hidden="true"></i>
+                address</a>
+        </div>
+        <div class="left_menu">
+            <a href="#">
+                <i class="fa fa-desktop" aria-hidden="true"></i>
+                Desktop</a>
+        </div>
+
+    </div>
+    <div class="right">
+        <div class="server_text">
+            服务器信息
+            <div class="server_add">
+                <!--<i class="fa fa-plus-square-o" aria-hidden="true"></i>-->
+                <input type="button" value="添加服务器" onclick="xianshi_add()">
+            </div>
+        </div>
+        <div class="server_info">
+            <div class="server_table">
+                <!--<table width="100%" border="0" cellspacing="1" cellpadding="0">-->
+                <table>
+                    <thead>
+                    <tr>
+                        <td>选择</td>
+                        <td>序号</td>
+                        <td>主机名</td>
+                        <td>ip地址</td>
+                        <td>操作</td>
+                    </tr>
+                    </thead>
+                    <tbody id="server">
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>alex</td>
+                        <td>192.168.1.1</td>
+                        <td><input type="button" value="删除" onclick="xiaoshi()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>2</td>
+                        <td>alex</td>
+                        <td>192.168.1.2</td>
+                        <td><input type="button" value="删除" onclick="xiaoshi()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>3</td>
+                        <td>alex</td>
+                        <td>192.168.1.3</td>
+                        <td><input type="button" value="删除" onclick="xiaoshi()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>4</td>
+                        <td>alex</td>
+                        <td>192.168.1.4</td>
+                        <td><input type="button" value="删除" onclick="xiaoshi()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>5</td>
+                        <td>alex</td>
+                        <td>192.168.1.5</td>
+                        <td><input type="button" value="删除" onclick="xiaoshi()"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="select">
+                    <input type="button" value="全选" onclick="selectAll()">
+                    <input type="button" value="取消全部" onclick="cancelAll()">
+                    <input type="button" value="反选" onclick="reverseAll()">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="zhezhao hide">
+</div>
+<div class="motai_add hide">
+    <div class="inpu">
+        <div class="inpu_info">主机名: <input type="text"></div>
+        <div class="inpu_info">IP地址: <input type="text"></div>
+        <div class="inpu_info">
+            <input type="button" value="确定">
+            <input type="button" value="取消" onclick="cancel()">
+        </div>
+    </div>
+</div>
+<div class="xiaoshi hide">
+    <div class="tishi">
+        <i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true"></i>
+        确认要删除吗?
+    </div>
+
+    <button class="ok">确认</button>
+    <button class="cancel" onclick="recover()">取消</button>
+</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    function selectAll() {
+        $(":checkbox").prop("checked", 'true')
+    }
+    function cancelAll() {
+        $('table :checkbox').prop('checked', false)
+    }
+    function reverseAll() {
+        var choose = $('table input:checked');
+        $('table :checkbox').prop('checked', true);
+        $(choose).prop('checked', false)
+    }
+    function xianshi_add() {
+        $('.zhezhao,.motai_add').removeClass('hide');
+    }
+    function cancel() {
+        $('.zhezhao,.motai_add').addClass('hide');
+    }
+    function xiaoshi() {
+        $('.zhezhao,.xiaoshi').removeClass('hide');
+    }
+    function recover() {
+        $('.zhezhao,.xiaoshi').addClass('hide');
+    }
+</script>
+</html>
