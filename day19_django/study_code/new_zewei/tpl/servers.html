@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>服务器列表</h4>
+<a href="/add_user">添加</a>
+<ul>
+    {% for row in server_list %}
+        <li>{{ row.nid }} - {{ row.username }}-{{ row.password }}-{{ row.aget }}
+            <a href="/del_user?nid={{ row.nid }}">删除</a>
+            <a href="/edit_user?nid={{ row.nid }}">编辑</a>
+            <a href="/edit_user-{{ row.nid }}.html">新编辑</a>
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

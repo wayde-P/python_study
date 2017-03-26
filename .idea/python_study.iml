@@ -2,8 +2,15 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.5.2 (C:\Python35\python.exe)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.5.2 (C:\Users\zewei\AppData\Local\Programs\Python\Python35\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="django_study_zewei" />
+    <orderEntry type="module" module-name="new_zewei" />
+    <orderEntry type="module" module-name="django_test" />
+    <orderEntry type="module" module-name="django_exercise_day19" />
+    <orderEntry type="module" module-name="crm_django" />
+    <orderEntry type="module" module-name="BBS_django" />
+    <orderEntry type="module" module-name="s15BBS" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />

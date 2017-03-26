@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit_user</title>
+</head>
+<body>
+<form method="POST" action="/edit_user-{{ v.nid }}.html">
+    <p><input type="text" name="user" value="{{ v.username }}"></p>
+    <p><input type="text" name="pwd" value="{{ v.password }}"></p>
+    <p><input type="text" name="age" value="{{ v.aget }}"></p>
+    <p><input type="submit" value="提交"></p>
+</form>
+</body>
+</html>

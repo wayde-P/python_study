@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //函数由谁执行this就是谁,函数执行的时候默认是 window.func()
+    //每一个函数里都有一个this
+    Name = 666
+    var dict1 = {
+        Name: 'root',
+        Age: 18,
+        Func: function () {
+            console.log(this.Name);
+            function inner() {
+                console.log(this.Name)
+            }
+
+            inner();
+        }
+    }
+    dict1.Func()
+    //========================
+    Name = 666
+    var dict2 = {
+        Name: 'root',
+        Age: 18,
+        Func: function () {
+            console.log(this.Name);
+            var that = this;
+
+            function inner() {
+                console.log(that.Name)
+            }
+
+            inner();
+        }
+    }
+    dict2.Func();
+</script>
+</body>
+</html>

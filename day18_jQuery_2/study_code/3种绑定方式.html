@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bind</title>
+</head>
+<body>
+<div class="c1">
+    <div class="title">抬头1</div>
+    <div class="content">内容1</div>
+</div>
+<div class="c1">
+    <div class="title">抬头1</div>
+    <div class="content">内容1</div>
+</div>
+<div class="c1">
+    <div class="title">抬头1</div>
+    <div class="content">内容1</div>
+</div>
+<div class="c1">
+    <div class="title">抬头1</div>
+    <div class="content">内容1</div>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    //        $('.title').click(function () {
+    //            var v= $(this).text()
+    //            console.log(v)
+    //        })
+    //        $('.title').bind('click',function () {
+    //            var v= $(this).text()
+    //            console.log(v)
+    //        })
+    //        $('.c1').delegate('.title','click',function () {
+    //            var v= $(this).text()
+    //            console.log(v)
+    //        })
+    $('.c1').on('click', '.title', function () {
+        var v = $(this).text()
+        console.log(v)
+    })
+</script>
+</body>
+</html>
