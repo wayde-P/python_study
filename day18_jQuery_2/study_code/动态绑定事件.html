@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="inp">
+<input type="button" value="提交" id="btn">
+<ul>
+    <li>内容</li>
+    <li>内容</li>
+</ul>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $('#btn').click(function () {
+        var v = $('#inp').val();
+        var tag = document.createElement('li');
+        tag.innerHTML = v;
+        $('ul').append(tag)
+    });
+    $('ul').delegate('li', 'click', function () {
+        var v = $(this).text()
+        var v = v + "+1"
+        $(this).text(v)
+    })
+</script>
+</body>
+</html>

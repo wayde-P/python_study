@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/day20_django_crm/study_code/BBS_django/.idea/BBS_django.iml" filepath="$PROJECT_DIR$/day20_django_crm/study_code/BBS_django/.idea/BBS_django.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day20_django_crm/study_code/crm_django/.idea/crm_django.iml" filepath="$PROJECT_DIR$/day20_django_crm/study_code/crm_django/.idea/crm_django.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../django_exercise_day19/.idea/django_exercise_day19.iml" filepath="$PROJECT_DIR$/../django_exercise_day19/.idea/django_exercise_day19.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../django_study_zewei/.idea/django_study_zewei.iml" filepath="$PROJECT_DIR$/../django_study_zewei/.idea/django_study_zewei.iml" />
+      <module fileurl="file://C:/常用/学习/django项目/django_商城/.idea/django_test.iml" filepath="C:/常用/学习/django项目/django_商城/.idea/django_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day19_django/study_code/new_zewei/.idea/new_zewei.iml" filepath="$PROJECT_DIR$/day19_django/study_code/new_zewei/.idea/new_zewei.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/python_study.iml" filepath="$PROJECT_DIR$/.idea/python_study.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day21_bbs/study_code/s15BBS/.idea/s15BBS.iml" filepath="$PROJECT_DIR$/day21_bbs/study_code/s15BBS/.idea/s15BBS.iml" />
     </modules>
   </component>
 </project>

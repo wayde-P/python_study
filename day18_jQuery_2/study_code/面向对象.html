@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function func(arg) {
+        console.log(this, arg)
+    }
+    func(19);
+    func.apply(window, [19])
+    func.call(window, 19)
+
+    function ott(name) {
+        this.Name = name
+//        console.log(this.Name)
+    }
+    var obj1 = new ott('alex')
+    var obj2 = new ott('alex2')
+    console.log(obj1.Name)
+</script>
+</body>
+</html>

@@ -186,12 +186,37 @@ a {
     color: #d66f63;
 }
 
+.main .left {
+    overflow: auto;
+}
 .main .left .left_menu {
-    padding-left: 20px;
-    height: 50px;
+    /*padding-left: 20px;*/
+    /*height: 50px;*/
     text-align: left;
-    line-height: 50px;
+    /*line-height: 50px;*/
+    display: block;
+    /*float: left;*/
+    width: 100%;;
     /*color: #000000;*/
+}
+
+.main .left .left_menu a {
+    margin-left: 20px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.main .left .left_menu .content {
+    background-color: #d64a45;
+    width: 100%;
+    font-size: 15px;
+}
+
+.main .left .left_menu .content a {
+    display: block;
+    padding: 5px;
+    height: 30px;
+    line-height: 30px;;
 }
 
 .main .left .left_menu:hover {
