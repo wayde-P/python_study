@@ -1,6 +1,15 @@
 import json
+import os
+import datetime
 
-with open('2017-6-22.log', "r") as source_log_file:
+basedir = os.path.dirname(os.path.abspath(__file__))
+
+today = datetime.date.today()
+yesterday = today - datetime.timedelta(days=1)
+
+log_file = basedir + '/logs/' + yesterday + '.log'
+
+with open(log_file, "r") as source_log_file:
     source_log_lines = source_log_file.readlines()
 
 error_dict = {}
