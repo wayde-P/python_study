@@ -15,5 +15,5 @@ class ArgvHandler(object):
         else:
             self.parser.print_help()
 
-    def start(self):
+    def start(self) -> object:
         print("-------going to start server---")

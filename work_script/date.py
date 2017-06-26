@@ -25,8 +25,8 @@ def fetch_time(oldtime):
     # print(a.split(".")[0])
 
 
-start_time = str("2017-04-05 14:30:00")
-end_time = str("2017-04-05 15:00:00")
+start_time = str("2017-04-05 12:30:00")
+end_time = str("2017-04-05 13:30:00")
 # end_time = str("2017-05-09 14:30:00")
 # end_time = str("1494311400.0")
 
