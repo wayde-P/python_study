@@ -3,9 +3,10 @@ import os
 import datetime
 
 basedir = os.path.dirname(os.path.abspath(__file__))
-
-today = datetime.date.today()
-yesterday = today - datetime.timedelta(days=1)
+year = (datetime.date.today() - datetime.timedelta(days=1)).strftime('%Y')
+month = (datetime.date.today() - datetime.timedelta(days=1)).strftime('%m').lstrip('0')
+day = (datetime.date.today() - datetime.timedelta(days=1)).strftime('%d').lstrip('0')
+yesterday = "%s-%s-%s" % (year, month, day)
 
 log_file = basedir + '/logs/' + yesterday + '.log'
 
@@ -47,4 +48,4 @@ for host, a in error_dict.items():
                 avg_leftValue = value / error_dict[host][metric]["count"]
             else:
                 continue
-            print(host, metric, avg_leftValue, error_dict[host][metric]["count"])
+            print(host, error_dict[host][metric]["count"], metric, '%5.3F' % avg_leftValue)
