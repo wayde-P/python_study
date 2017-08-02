@@ -54,11 +54,7 @@ class DBmysql(object):
         self.cur = self.conn.cursor()
 
     def exec_sql(self, ):
-        sql = 'SELECT host.hostname AS physical FROM grp,grp_host,host ' \
-              'WHERE host.id = grp_host.host_id ' \
-              'AND grp.id = grp_host.grp_id ' \
-              'AND ( grp.grp_name=\'mostly-physical machine\' OR  grp.grp_name=\'mostly-vm\' OR grp.grp_name=\'fastdfs\') ' \
-              'GROUP BY host.hostname ;'
+        sql = "SELECT host.hostname AS physical FROM grp,grp_host,host WHERE host.id = grp_host.host_id  AND grp.id = grp_host.grp_id  AND grp.grp_name IN ('mostly-physical machine','mostly-vm','fastdfs','hadoop-hbase') GROUP BY host.hostname ;"
         self.cur.execute(sql)
         ip_all_list = []
         for one in self.cur.fetchall():
@@ -196,6 +192,8 @@ if __name__ == "__main__":
         log_file = basedir + "/%s.log" % segment.__str__().replace("/", "_")
         # 文件加入列表.方便后面分析日志使用.
         ip_log_file_list.append(log_file)
+        # config取消192类网段的ping.写成死ip,将现有的ip和mac写入文件.供分析即可.
+        ip_log_file_list.append(config.current_host_file)
         with open(log_file, "w") as f:
             pass
         remote_host = net_segment[segment]["host"]
@@ -218,6 +216,12 @@ if __name__ == "__main__":
         # 等待线程里的任务执行完成.
         for t in threads:
             t.join()
+        print(log_file)
+        cmd = "\cp %s %s.done" % (log_file, log_file)
+        print(cmd)
+        process = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                                   stderr=subprocess.PIPE)
+        process.communicate()
 
     # 读取所有的日志并进入MySQL里面查..如果有就ok.没有就报警
     all_error_ip = []
@@ -235,7 +239,7 @@ if __name__ == "__main__":
             error_log.write(time_now + "\n")
             for err_ip in all_error_ip:
                 error_log.write(err_ip + "\n")
-                #        print(all_error_ip)
+    # print(all_error_ip)
 
     r = requests.get(url=url, headers=headers)
     # print(r.text)

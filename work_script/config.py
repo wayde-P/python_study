@@ -17,3 +17,5 @@ exclude_ip = ['172.18.30.3', '172.18.30.2', '172.18.30.1', '192.168.23.178', '19
               '192.168.22.228', '192.168.22.229']
 
 error_ip_log = '/error.log'
+
+current_host_file = 'current_host.log'
