@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Beautiful design tables in HTML in the style of a zebra.</title>
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
+</head>
+
+<body>
+<div id="container">
+	<table class="zebra">
+    <caption>服务器普通用户权限展示页</caption>
+		<thead>
+        	<tr>
+				<th>IP</th>
+				<th>commnd</th>
+				<th>Status</th>
+				<th>commnd</th>
+				<th>Status</th>
+				<th>commnd</th>
+				<th>Status</th>
+				<th>commnd</th>
+				<th>Status</th>
+				<th>commnd</th>
+				<th>Status</th>
+				<th>commnd</th>
+				<th>Status</th>
+            </tr>
+		</thead>
+        <tbody>
+            <tr><td bgcolor="#2f4f4f">wrong host</td></tr>
+            {% for key, value in wrong_dict.items %}
+                <tr>
+                    <td>{{ key }}</td>
+                    {% for okey,ovalue in value.items %}
+                        <td>{{ okey }}</td>
+                        {% if ovalue == 1 %}
+                            <td><font color="red">有</font></td>
+                        {% elif ovalue == 0 %}
+                            <td>无</td>
+                        {% elif ovalue == 2 %}
+                            <td>不存在</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            <tr><td bgcolor="#2f4f4f">normal host</td></tr>
+            {% for key, value in normal_dict.items %}
+                <tr>
+                    <td>{{ key }}</td>
+                    {% for okey,ovalue in value.items %}
+                        <td>{{ okey }}</td>
+                        {% if ovalue == 1 %}
+                            <td><font color="red">有</font></td>
+                        {% elif ovalue == 0 %}
+                            <td>无</td>
+                        {% elif ovalue == 2 %}
+                            <td>不存在</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+	</table>
+</div>
+    
+</body>
+</html>
